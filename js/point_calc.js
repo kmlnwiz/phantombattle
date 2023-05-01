@@ -149,19 +149,19 @@ function point_calc() {
 
     for (let i = 0; i < calclated.length; i++) {
 
-        $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="" src="https://i-cf.quiz.colopl.jp/img/event/class/${kobetsu_image[calclated[i][1][0]]}.png" style="height:2.5em;">`);
+        $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="" src="image/${kobetsu_image[calclated[i][1][0]]}.png" style="height:2.5em;">`);
         $(`#${sougou_tokyu[i]}-questA-single-point`).html((calclated[i][0][0] * point[0]).toLocaleString());
         $(`#${sougou_tokyu[i]}-questA-single-count`).html(`${calclated[i][0][0]}<span class="d-inline-block small mx-1">/100</span>`);
 
-        $(`#${sougou_tokyu[i]}-questB-single-rank`).html(`<img class="" src="https://i-cf.quiz.colopl.jp/img/event/class/${kobetsu_image[calclated[i][1][1]]}.png" style="height:2.5em;">`);
+        $(`#${sougou_tokyu[i]}-questB-single-rank`).html(`<img class="" src="image/${kobetsu_image[calclated[i][1][1]]}.png" style="height:2.5em;">`);
         $(`#${sougou_tokyu[i]}-questB-single-point`).html((calclated[i][0][1] * point[1]).toLocaleString());
         $(`#${sougou_tokyu[i]}-questB-single-count`).html(`${calclated[i][0][1]}<span class="d-inline-block small mx-1">/100</span>`);
 
-        $(`#${sougou_tokyu[i]}-questC-single-rank`).html(`<img class="" src="https://i-cf.quiz.colopl.jp/img/event/class/${kobetsu_image[calclated[i][1][2]]}.png" style="height:2.5em;">`);
+        $(`#${sougou_tokyu[i]}-questC-single-rank`).html(`<img class="" src="image/${kobetsu_image[calclated[i][1][2]]}.png" style="height:2.5em;">`);
         $(`#${sougou_tokyu[i]}-questC-single-point`).html((calclated[i][0][2] * point[2]).toLocaleString());
         $(`#${sougou_tokyu[i]}-questC-single-count`).html(`${calclated[i][0][2]}<span class="d-inline-block small mx-1">/100</span>`);
 
-        $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="" src="https://i-cf.quiz.colopl.jp/img/event/class/${kobetsu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
+        $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="" src="image/${kobetsu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
         $(`#${sougou_tokyu[i]}-questD-single-point`).html((calclated[i][0][3] * point[3]).toLocaleString());
         $(`#${sougou_tokyu[i]}-questD-single-count`).html(`${calclated[i][0][3]}<span class="d-inline-block small mx-1">/100</span>`);
 
