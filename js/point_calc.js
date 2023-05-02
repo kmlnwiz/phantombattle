@@ -6,6 +6,9 @@ function handleFormChange() {
         sealLevel: $('input[id^="seal-level"]').map(function () {
             return $(this).val();
         }).get(),
+        currentPoint: $('input[id^="current-point"]').map(function () {
+            return $(this).val();
+        }).get(),
         avgTime: $('select[id^="average-time"]').map(function () {
             return $(this).val();
         }).get(),
@@ -22,6 +25,7 @@ function handleFormChange() {
         point_array.push({
             fieldName: input_values['fieldName'][i],
             sealLevelPoint: level[input_values['sealLevel'][i]],
+            currentPoint:input_values['currentPoint'],
             avgTimePoint: bonus_calc(i, input_values['avgTime'][i], input_values['sealLevel'][i]),
             clearTurnPoint: bonus_calc(i, input_values['clearTurn'][i], input_values['sealLevel'][i]),
             correctRatePoint: bonus_calc(i, input_values['correctRate'][i], input_values['sealLevel'][i]),
@@ -45,6 +49,11 @@ function handleFormChange() {
     $('#questB-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][1]}`);
     $('#questC-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][2]}`);
     $('#questD-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][3]}`);
+
+    $('#questA-current-point').html(`${Number(input_values['currentPoint'][0]).toLocaleString()}<span class="small"> Pt</span>`);
+    $('#questB-current-point').html(`${Number(input_values['currentPoint'][1]).toLocaleString()}<span class="small"> Pt</span>`);
+    $('#questC-current-point').html(`${Number(input_values['currentPoint'][2]).toLocaleString()}<span class="small"> Pt</span>`);
+    $('#questD-current-point').html(`${Number(input_values['currentPoint'][3]).toLocaleString()}<span class="small"> Pt</span>`);
 
     $('#questA-avg-rank').html(input_values['avgTime'][0]);
     $('#questB-avg-rank').html(input_values['avgTime'][1]);
@@ -72,11 +81,33 @@ $('[id^="quest"] select').on('change', handleFormChange);
 $('#on_casual').on('change', handleFormChange);
 
 // input要素に対して、値が変更されたときのイベントを設定する
-$('[id^="quest"] input').on('change', function () {
+$('[id^="quest"] input[class^="seal-level"]').on('change', function () {
     const value = $(this).val(); // 入力値を取得する
 
     if (value < 0 || value > 30) { // 入力値が0未満または30を超える場合
-        $(this).val(''); // 入力値をクリアにする
+        $(this).val('25'); // 入力値をクリアにする
+    } else {
+        handleFormChange();
+    };
+});
+
+// input要素に対して、値が変更されたときのイベントを設定する
+$('[id^="quest"] input[class^="current-point"]').on('change', function () {
+    const value = $(this).val(); // 入力値を取得する
+
+    if (value < 0 || value > 9999999) { // 入力値が0未満または9999999を超える場合
+        $(this).val('0'); // 入力値をクリアにする
+    } else {
+        handleFormChange();
+    };
+});
+
+// input要素に対して、値が変更されたときのイベントを設定する
+$('input[class^="trial-count"]').on('change', function () {
+    const value = $(this).val(); // 入力値を取得する
+
+    if (value < 0 || value > 100) { // 入力値が0未満または100を超える場合
+        $(this).val('100'); // 入力値をクリアにする
     } else {
         handleFormChange();
     };
@@ -103,6 +134,7 @@ function bonus_calc(i, rank, seal) {
 function point_calc() {
 
     const calclated = [];
+    const trialCount = $('#trial-count').val();
 
     const point = [
         Number($('#get-pointA').text().replace(/,/g, '')),
@@ -113,10 +145,17 @@ function point_calc() {
     //console.log(point);
 
     //個別等級　必要挑戦回数
+    const curentPoint = [
+        $('#current-pointA').val(),
+        $('#current-pointB').val(),
+        $('#current-pointC').val(),
+        $('#current-pointD').val(),
+    ];
+
     const SG = []; //single count
     for (let i = 0; i < point.length; i++) {
         SG.push(single.map(element => {
-            return Math.ceil(element / point[i]);
+            return Math.ceil((element - curentPoint[i] >= 0 ? element - curentPoint[i] : 0) / point[i]);
         }));
     };
     console.log(SG);
@@ -134,10 +173,10 @@ function point_calc() {
         let variance = 10000;
         let GOAL = whole[i];
 
-        for (let a = 0; a < A.length && A[a] <= 100; a++) {
-            for (let b = 0; b < B.length && A[a] + B[b] <= 100; b++) {
-                for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= 100; c++) {
-                    for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= 100; d++) {
+        for (let a = 0; a < A.length && A[a] <= trialCount; a++) {
+            for (let b = 0; b < B.length && A[a] + B[b] <= trialCount; b++) {
+                for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= trialCount; c++) {
+                    for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= trialCount; d++) {
                         const totalCost = A[a] / 5 + B[b] / 5 + C[c] / 5 + D[d] / 5;
                         const totalPoints = a + b + c + d + 4;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
@@ -209,7 +248,7 @@ function point_calc() {
                 progress_scale.push(`<div class="progress border border-top-0 border-bottom-0 border-start-0 rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%;"><div class="progress-bar bg-transparent" style=""></div></div>`);
             } else if (j == 39) {
                 progress_scale.push(`<div class="progress border border-top-0 border-bottom-0 border-end-0 rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%;"><div class="progress-bar bg-transparent" style=""></div></div>`);
-            }else{
+            } else {
                 progress_scale.push(`<div class="progress border border-top-0 border-bottom-0 rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%;"><div class="progress-bar bg-transparent" style=""></div></div>`);
             };
         };
@@ -217,24 +256,24 @@ function point_calc() {
 
 
         $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][0]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questA-single-point`).html((calclated[i][0][0] * point[0]).toLocaleString());
-        $(`#${sougou_tokyu[i]}-questA-single-count`).html(`${calclated[i][0][0]}<span class="d-inline-block small mx-1">/100</span>`);
+        $(`#${sougou_tokyu[i]}-questA-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][0] * point[0]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questA-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][0]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questB-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][1]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questB-single-point`).html((calclated[i][0][1] * point[1]).toLocaleString());
-        $(`#${sougou_tokyu[i]}-questB-single-count`).html(`${calclated[i][0][1]}<span class="d-inline-block small mx-1">/100</span>`);
+        $(`#${sougou_tokyu[i]}-questB-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][1] * point[1]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questB-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][1]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questC-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][2]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questC-single-point`).html((calclated[i][0][2] * point[2]).toLocaleString());
-        $(`#${sougou_tokyu[i]}-questC-single-count`).html(`${calclated[i][0][2]}<span class="d-inline-block small mx-1">/100</span>`);
+        $(`#${sougou_tokyu[i]}-questC-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][2] * point[2]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questC-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][2]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questD-single-point`).html((calclated[i][0][3] * point[3]).toLocaleString());
-        $(`#${sougou_tokyu[i]}-questD-single-count`).html(`${calclated[i][0][3]}<span class="d-inline-block small mx-1">/100</span>`);
+        $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][3] * point[3]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questD-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][3]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
-        $(`#${sougou_tokyu[i]}-count-margin`).html(`${100 - calclated[i][0].reduce((acc, cur) => {
+        $(`#${sougou_tokyu[i]}-count-margin`).html(`${trialCount - calclated[i][0].reduce((acc, cur) => {
             return acc + cur;
-        }, 0)}<span class="d-inline-block small mx-1">/100</span>`);
+        }, 0)}<span class="d-inline-block small mx-1">/${trialCount}</span>`);
 
     };
 
