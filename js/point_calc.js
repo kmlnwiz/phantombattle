@@ -36,6 +36,32 @@ function handleFormChange() {
     $('#get-pointC').html($('#on_casual').prop('checked') ? (point_array[2]['getPoint'] * 3).toLocaleString() : point_array[2]['getPoint'].toLocaleString());
     $('#get-pointD').html($('#on_casual').prop('checked') ? (point_array[3]['getPoint'] * 3).toLocaleString() : point_array[3]['getPoint'].toLocaleString());
 
+    $('#questA-get-point').html($('#on_casual').prop('checked') ? (point_array[0]['getPoint'] * 3).toLocaleString() : point_array[0]['getPoint'].toLocaleString());
+    $('#questB-get-point').html($('#on_casual').prop('checked') ? (point_array[1]['getPoint'] * 3).toLocaleString() : point_array[1]['getPoint'].toLocaleString());
+    $('#questC-get-point').html($('#on_casual').prop('checked') ? (point_array[2]['getPoint'] * 3).toLocaleString() : point_array[2]['getPoint'].toLocaleString());
+    $('#questD-get-point').html($('#on_casual').prop('checked') ? (point_array[3]['getPoint'] * 3).toLocaleString() : point_array[3]['getPoint'].toLocaleString());
+
+    $('#questA-seal-level').html(input_values['sealLevel'][0]);
+    $('#questB-seal-level').html(input_values['sealLevel'][1]);
+    $('#questC-seal-level').html(input_values['sealLevel'][2]);
+    $('#questD-seal-level').html(input_values['sealLevel'][3]);
+
+    $('#questA-avg-rank').html(input_values['avgTime'][0]);
+    $('#questB-avg-rank').html(input_values['avgTime'][1]);
+    $('#questC-avg-rank').html(input_values['avgTime'][2]);
+    $('#questD-avg-rank').html(input_values['avgTime'][3]);
+
+    $('#questA-turn-rank').html(input_values['clearTurn'][0]);
+    $('#questB-turn-rank').html(input_values['clearTurn'][1]);
+    $('#questC-turn-rank').html(input_values['clearTurn'][2]);
+    $('#questD-turn-rank').html(input_values['clearTurn'][3]);
+
+    $('#questA-correct-rank').html(input_values['correctRate'][0]);
+    $('#questB-correct-rank').html(input_values['correctRate'][1]);
+    $('#questC-correct-rank').html(input_values['correctRate'][2]);
+    $('#questD-correct-rank').html(input_values['correctRate'][3]);
+
+    $('#which-mode').html($('#on_casual').prop('checked') ? '<span class="col d-inline-block text-bg-success text-center py-1">カジュアルモード</span>' : '<span class="col d-inline-block text-bg-danger text-center py-1">チャレンジモード</span>');
     point_calc()
 };
 

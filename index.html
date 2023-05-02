@@ -47,7 +47,7 @@
         </div>
 
         <hr class="">
-        <div class="row g-0 mb-3" id="image-source">
+        <div class="row g-0 mb-3">
 
             <div id="questA" class="col-lg-6 col-xxl-3 p-3 border ">
                 <span class="d-inline-block h3 mb-2">クエストA</span>
@@ -264,331 +264,447 @@
 
             <!--<button class="btn btn-primary my-3" type="button" onClick="point_calc()">計算する</button>-->
 
-            <hr class="mb-0 mt-3">
+            <hr class="m-3">
+            <div id="image-source">
+                <div id="which-mode" class="w-100 h4 row g-0 my-0">
+                    <span class="col d-inline-block text-bg-danger text-center py-2">チャレンジモード</span>
+                </div>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-5 g-0 pt-3">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-4 g-0">
 
-                <div id="resultSS" class="col p-3 border">
+                    <div class="col p-3 border">
+                        <span class="d-inline-block h3 mb-2">クエストA</span>
+                        <span class="d-inline-block mb-2 ms-5 h3 badge text-bg-danger px-4" style="width:12.5em;"><span id="questA-get-point" class="d-inline-block h4 m-0 me-1"></span>Pt</span>
+                        <div>
 
-                    <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank07_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：40</span></span>
-
-                    <div class="row">
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
-                                <div id="SS-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="SS-questA-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="SS-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="row g-1">
+                                <div class="col-12">
+                                    <span class="d-inline-block small w-100 text-center">刻印レベル</span>
+                                    <span id="questA-seal-level" class="d-inline-block h4 w-100 text-center">Lv.25</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">平均解答時間</span>
+                                    <span id="questA-avg-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クリアターン</span>
+                                    <span id="questA-turn-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クイズ正解率</span>
+                                    <span id="questA-correct-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
-                                <div id="SS-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="SS-questB-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="SS-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+
+                    </div>
+
+                    <div class="col p-3 border">
+                        <span class="d-inline-block h3 mb-2">クエストB</span>
+                        <span class="d-inline-block mb-2 ms-5 h3 badge text-bg-primary px-4" style="width:12.5em;"><span id="questB-get-point" class="d-inline-block h4 m-0 me-1"></span>Pt</span>
+                        <div>
+
+                            <div class="row g-1">
+                                <div class="col-12">
+                                    <span class="d-inline-block small w-100 text-center">刻印レベル</span>
+                                    <span id="questB-seal-level" class="d-inline-block h4 w-100 text-center">Lv.25</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">平均解答時間</span>
+                                    <span id="questB-avg-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クリアターン</span>
+                                    <span id="questB-turn-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クイズ正解率</span>
+                                    <span id="questB-correct-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
-                                <div id="SS-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="SS-questC-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="SS-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+
+                    </div>
+
+                    <div class="col p-3 border">
+                        <span class="d-inline-block h3 mb-2">クエストC</span>
+                        <span class="d-inline-block mb-2 ms-5 h3 badge text-bg-warning px-4" style="width:12.5em;"><span id="questC-get-point" class="d-inline-block h4 m-0 me-1"></span>Pt</span>
+                        <div>
+
+                            <div class="row g-1">
+                                <div class="col-12">
+                                    <span class="d-inline-block small w-100 text-center">刻印レベル</span>
+                                    <span id="questC-seal-level" class="d-inline-block h4 w-100 text-center">Lv.25</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">平均解答時間</span>
+                                    <span id="questC-avg-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クリアターン</span>
+                                    <span id="questC-turn-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クイズ正解率</span>
+                                    <span id="questC-correct-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
-                                <div id="SS-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+
+                    </div>
+
+                    <div class="col p-3 border">
+                        <span class="d-inline-block h3 mb-2">クエストD</span>
+                        <span class="d-inline-block mb-2 ms-5 h3 badge text-bg-success px-4" style="width:12.5em;"><span id="questB-get-point" class="d-inline-block h4 m-0 me-1"></span>Pt</span>
+                        <div>
+
+                            <div class="row g-1">
+                                <div class="col-12">
+                                    <span class="d-inline-block small w-100 text-center">刻印レベル</span>
+                                    <span id="questD-seal-level" class="d-inline-block h4 w-100 text-center">Lv.25</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">平均解答時間</span>
+                                    <span id="questD-avg-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クリアターン</span>
+                                    <span id="questD-turn-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
+                                <div class="col">
+                                    <span class="d-inline-block small w-100 text-center">クイズ正解率</span>
+                                    <span id="questD-correct-rank" class="d-inline-block h4 w-100 text-center">SS</span>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="SS-questD-single-point" class="col h5 text-center">0</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-5 g-0 pt-3">
+
+                    <div id="resultSS" class="col p-3 border">
+
+                        <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank07_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：40</span></span>
+
+                        <div class="row">
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
+                                    <div id="SS-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="SS-questA-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="SS-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="SS-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
+                                    <div id="SS-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="SS-questB-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="SS-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
+                            </div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
+                                    <div id="SS-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="SS-questC-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="SS-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
+                                    <div id="SS-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="SS-questD-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="SS-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="resultS" class="col p-3 border ">
+                    <div id="resultS" class="col p-3 border ">
 
-                    <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank06_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：34</span></span>
+                        <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank06_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：34</span></span>
 
-                    <div class="row">
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
-                                <div id="S-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                        <div class="row">
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
+                                    <div id="S-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="S-questA-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="S-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="S-questA-single-point" class="col h5 text-center">0</div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
+                                    <div id="S-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="S-questB-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="S-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="S-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
+                                    <div id="S-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="S-questC-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="S-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
-                                <div id="S-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="S-questB-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="S-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
-                                <div id="S-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="S-questC-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="S-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
-                                <div id="S-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="S-questD-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="S-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
+                                    <div id="S-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="S-questD-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="S-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="resultA" class="col p-3 border ">
+                    <div id="resultA" class="col p-3 border ">
 
-                    <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank05_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：28</span></span>
+                        <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank05_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：28</span></span>
 
-                    <div class="row">
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
-                                <div id="A-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                        <div class="row">
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
+                                    <div id="A-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="A-questA-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="A-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="A-questA-single-point" class="col h5 text-center">0</div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
+                                    <div id="A-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="A-questB-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="A-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="A-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
+                                    <div id="A-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="A-questC-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="A-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
-                                <div id="A-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="A-questB-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="A-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
-                                <div id="A-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="A-questC-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="A-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
-                                <div id="A-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="A-questD-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="A-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
+                                    <div id="A-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="A-questD-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="A-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="resultB" class="col p-3 border ">
+                    <div id="resultB" class="col p-3 border ">
 
-                    <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank04_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：23</span></span>
+                        <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank04_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：23</span></span>
 
-                    <div class="row">
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
-                                <div id="B-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                        <div class="row">
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
+                                    <div id="B-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="B-questA-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="B-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="B-questA-single-point" class="col h5 text-center">0</div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
+                                    <div id="B-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="B-questB-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="B-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="B-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
+                                    <div id="B-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="B-questC-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="B-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストB</div>
-                                <div id="B-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="B-questB-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="B-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
-                                <div id="B-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="B-questC-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="B-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
-                                <div id="B-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="B-questD-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="B-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
+                                    <div id="B-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="B-questD-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="B-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="resultC" class="col p-3 border ">
+                    <div id="resultC" class="col p-3 border ">
 
-                    <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank03_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：17</span></span>
+                        <span class="d-inline-block h3 mb-3 pb-3 border-bottom w-100 text-center">総合等級<img src="image/erc_phantombattle_rank03_rX9b3S.png" class="mx-1" style="height:1.8em;"><span class="d-block fw-normal" style="font-size:0.75em;">個別等級：17</span></span>
 
-                    <div class="row">
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
-                                <div id="C-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                        <div class="row">
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストA</div>
+                                    <div id="C-questA-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="C-questA-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="C-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="C-questA-single-point" class="col h5 text-center">0</div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
+                                    <div id="C-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="C-questB-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="C-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="C-questA-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12 border-bottom mb-3">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
+                                    <div id="C-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="C-questC-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="C-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
-                                <div id="C-questB-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="C-questB-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="C-questB-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12 border-bottom mb-3">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストC</div>
-                                <div id="C-questC-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="C-questC-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="C-questC-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
-                                <div id="C-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">ポイント</div>
-                                <div id="C-questD-single-point" class="col h5 text-center">0</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4 text-center align-self-center">挑戦回数</div>
-                                <div id="C-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center fw-bold" style="font-size:1.1em;">クエストD</div>
+                                    <div id="C-questD-single-rank" class="col h5 text-center"><img class="mb-0" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">ポイント</div>
+                                    <div id="C-questD-single-point" class="col h5 text-center">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center align-self-center">挑戦回数</div>
+                                    <div id="C-questD-single-count" class="col h5 text-center">0<span class="d-inline-block small mx-1">/100</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 px-3"><span class="float-end text-muted">チャレンジモード</span></div>
         </div>
 
         <!-- Button trigger modal -->
