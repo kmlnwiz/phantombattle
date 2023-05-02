@@ -190,6 +190,25 @@ function point_calc() {
 
 
     for (let i = 0; i < calclated.length; i++) {
+        let progress = [
+            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][0]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][0] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(254,169,223,0) 0%,rgba(254,169,223,100) 50%);"></div></div>`,
+            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][1]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][1] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(89,206,230,0) 0%,rgba(89,206,230,100) 50%)"></div></div>`,
+            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][2]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][2] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(253,235,72,0) 0%,rgba(253,235,72,100) 50%);"></div></div>`,
+            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][3]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][3] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(144,74,216,0) 0%,rgba(144,74,216,100) 50%);"></div></div>`,
+            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${40 - calclated[i][1].reduce((acc, cur) => {
+            return acc + cur;
+        }, 0)}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${(40 - calclated[i][1].reduce((acc, cur) => {
+            return acc + cur;
+        }, 0)) / 40 * 100}%"><div class="progress-bar" style="background-color:transparent;"></div></div>`,
+        ];
+        $(`#${sougou_tokyu[i]}-progress`).html(progress.join('\n'));
+
+        let progress_scale = [];
+        for (let j = 0; j < 40; j++) {
+            progress_scale.push(`<div class="progress border border-white-subtle rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${1 / 40 * 100}%;"><div class="progress-bar bg-transparent" style=""></div></div>`);
+        };
+        $(`.progress-scale`).html(progress_scale.join('\n'));
+
 
         $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][0]]}.png" style="height:2.5em;">`);
         $(`#${sougou_tokyu[i]}-questA-single-point`).html((calclated[i][0][0] * point[0]).toLocaleString());
@@ -208,8 +227,8 @@ function point_calc() {
         $(`#${sougou_tokyu[i]}-questD-single-count`).html(`${calclated[i][0][3]}<span class="d-inline-block small mx-1">/100</span>`);
 
         $(`#${sougou_tokyu[i]}-count-margin`).html(`${100 - calclated[i][0].reduce((acc, cur) => {
-                                return acc + cur;
-                            }, 0)}<span class="d-inline-block small mx-1">/100</span>`);
+            return acc + cur;
+        }, 0)}<span class="d-inline-block small mx-1">/100</span>`);
 
     };
 
