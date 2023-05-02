@@ -41,10 +41,10 @@ function handleFormChange() {
     $('#questC-get-point').html($('#on_casual').prop('checked') ? (point_array[2]['getPoint'] * 3).toLocaleString() : point_array[2]['getPoint'].toLocaleString());
     $('#questD-get-point').html($('#on_casual').prop('checked') ? (point_array[3]['getPoint'] * 3).toLocaleString() : point_array[3]['getPoint'].toLocaleString());
 
-    $('#questA-seal-level').html(input_values['sealLevel'][0]);
-    $('#questB-seal-level').html(input_values['sealLevel'][1]);
-    $('#questC-seal-level').html(input_values['sealLevel'][2]);
-    $('#questD-seal-level').html(input_values['sealLevel'][3]);
+    $('#questA-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][0]}`);
+    $('#questB-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][1]}`);
+    $('#questC-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][2]}`);
+    $('#questD-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][3]}`);
 
     $('#questA-avg-rank').html(input_values['avgTime'][0]);
     $('#questB-avg-rank').html(input_values['avgTime'][1]);
