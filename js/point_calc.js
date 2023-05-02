@@ -25,7 +25,7 @@ function handleFormChange() {
         point_array.push({
             fieldName: input_values['fieldName'][i],
             sealLevelPoint: level[input_values['sealLevel'][i]],
-            currentPoint:input_values['currentPoint'],
+            currentPoint: input_values['currentPoint'],
             avgTimePoint: bonus_calc(i, input_values['avgTime'][i], input_values['sealLevel'][i]),
             clearTurnPoint: bonus_calc(i, input_values['clearTurn'][i], input_values['sealLevel'][i]),
             correctRatePoint: bonus_calc(i, input_values['correctRate'][i], input_values['sealLevel'][i]),
@@ -176,15 +176,15 @@ function point_calc() {
     for (let i = 0; i < 5; i++) {
         let minCost = Infinity;
         let result = [];
-        let priority = 20;
-        let variance = 10000;
+        let priority = trialCount / 5;
+        let variance = Infinity;
         let GOAL = whole[i];
 
         for (let a = 0; a < A.length && A[a] <= trialCount; a++) {
             for (let b = 0; b < B.length && A[a] + B[b] <= trialCount; b++) {
                 for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= trialCount; c++) {
                     for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= trialCount; d++) {
-                        const totalCost = A[a] / 5 + B[b] / 5 + C[c] / 5 + D[d] / 5;
+                        const totalCost = A[a] + B[b] + C[c] + D[d];
                         const totalPoints = a + b + c + d + 4;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
                             let pri_num = 0;
