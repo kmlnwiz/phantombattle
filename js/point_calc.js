@@ -130,6 +130,7 @@ function point_calc() {
     for (let i = 0; i < 5; i++) {
         let minCost = Infinity;
         let result = [];
+        let mostFive = 0;
         let GOAL = whole[i];
 
         for (let a = 0; a < A.length && A[a] <= 100; a++) {
@@ -139,11 +140,21 @@ function point_calc() {
                         const totalCost = A[a] + B[b] + C[c] + D[d];
                         const totalPoints = a + b + c + d + 4;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
-                            minCost = totalCost;
-                            result = [
-                                [SG[0][a], SG[1][b], SG[2][c], SG[3][d]],
-                                [a + 1, b + 1, c + 1, d + 1],
-                            ];
+                            let offive = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]].reduce((acc, cur) => {
+                                if (cur % 5 === 0) {
+                                    return acc + 1;
+                                } else {
+                                    return acc;
+                                };
+                            }, 0);
+                            if (mostFive <= offive) {
+                                minCost = totalCost;
+                                result = [
+                                    [SG[0][a], SG[1][b], SG[2][c], SG[3][d]],
+                                    [a + 1, b + 1, c + 1, d + 1],
+                                ];
+                                mostFive = offive
+                            };
                         };
                     };
                 };
