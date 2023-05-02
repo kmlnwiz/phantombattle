@@ -138,7 +138,7 @@ function point_calc() {
             for (let b = 0; b < B.length && A[a] + B[b] <= 100; b++) {
                 for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= 100; c++) {
                     for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= 100; d++) {
-                        const totalCost = A[a] + B[b] + C[c] + D[d];
+                        const totalCost = A[a]/5 + B[b]/5 + C[c]/5 + D[d]/5;
                         const totalPoints = a + b + c + d + 4;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
                             let pri_num = 0;
