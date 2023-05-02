@@ -130,7 +130,8 @@ function point_calc() {
     for (let i = 0; i < 5; i++) {
         let minCost = Infinity;
         let result = [];
-        let mostFive = 0;
+        let priority = 20;
+        let variance = 10000;
         let GOAL = whole[i];
 
         for (let a = 0; a < A.length && A[a] <= 100; a++) {
@@ -140,20 +141,24 @@ function point_calc() {
                         const totalCost = A[a] + B[b] + C[c] + D[d];
                         const totalPoints = a + b + c + d + 4;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
-                            let offive = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]].reduce((acc, cur) => {
-                                if (cur % 5 === 0) {
-                                    return acc + 1;
-                                } else {
-                                    return acc;
-                                };
+                            let pri_num = 0;
+                            let arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
+
+                            pri_num = arr.reduce((acc, cur) => {
+                                return acc + Math.ceil(cur / 5);
                             }, 0);
-                            if (mostFive <= offive) {
+
+                            const avg = arr.reduce((acc, val) => acc + val) / arr.length;
+                            const vary = arr.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0) / arr.length;
+
+                            if (priority >= pri_num && variance >= vary) {
                                 minCost = totalCost;
                                 result = [
-                                    [SG[0][a], SG[1][b], SG[2][c], SG[3][d]],
+                                    arr,
                                     [a + 1, b + 1, c + 1, d + 1],
                                 ];
-                                mostFive = offive
+                                priority = pri_num
+                                variance = vary;
                             };
                         };
                     };
