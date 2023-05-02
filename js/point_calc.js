@@ -138,7 +138,7 @@ function point_calc() {
             for (let b = 0; b < B.length && A[a] + B[b] <= 100; b++) {
                 for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= 100; c++) {
                     for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= 100; d++) {
-                        const totalCost = A[a]/5 + B[b]/5 + C[c]/5 + D[d]/5;
+                        const totalCost = A[a] / 5 + B[b] / 5 + C[c] / 5 + D[d] / 5;
                         const totalPoints = a + b + c + d + 4;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
                             let pri_num = 0;
@@ -206,6 +206,10 @@ function point_calc() {
         $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
         $(`#${sougou_tokyu[i]}-questD-single-point`).html((calclated[i][0][3] * point[3]).toLocaleString());
         $(`#${sougou_tokyu[i]}-questD-single-count`).html(`${calclated[i][0][3]}<span class="d-inline-block small mx-1">/100</span>`);
+
+        $(`#${sougou_tokyu[i]}-count-margin`).html(`${100 - calclated[i][0].reduce((acc, cur) => {
+                                return acc + cur;
+                            }, 0)}<span class="d-inline-block small mx-1">/100</span>`);
 
     };
 
