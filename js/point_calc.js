@@ -45,10 +45,10 @@ function handleFormChange() {
     $('#questC-get-point').html($('#on_casual').prop('checked') ? (point_array[2]['getPoint'] * 3).toLocaleString() : point_array[2]['getPoint'].toLocaleString());
     $('#questD-get-point').html($('#on_casual').prop('checked') ? (point_array[3]['getPoint'] * 3).toLocaleString() : point_array[3]['getPoint'].toLocaleString());
 
-    $('#questA-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][0]}`);
-    $('#questB-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][1]}`);
-    $('#questC-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][2]}`);
-    $('#questD-seal-level').html(`<span class="small">Lv.</span>${input_values['sealLevel'][3]}`);
+    $('#questA-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][0]}`);
+    $('#questB-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][1]}`);
+    $('#questC-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][2]}`);
+    $('#questD-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][3]}`);
 
     $('#questA-current-point').html(`${Number(input_values['currentPoint'][0]).toLocaleString()}<span class="small"> Pt</span>`);
     $('#questB-current-point').html(`${Number(input_values['currentPoint'][1]).toLocaleString()}<span class="small"> Pt</span>`);
@@ -85,7 +85,8 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
     const value = $(this).val(); // 入力値を取得する
 
     if (value < 0 || value > 30) { // 入力値が0未満または30を超える場合
-        $(this).val('25'); // 入力値をクリアにする
+        $(this).val('25'); // 入力値をにする
+        handleFormChange();
     } else {
         handleFormChange();
     };
@@ -93,10 +94,15 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
 
 // input要素に対して、値が変更されたときのイベントを設定する
 $('[id^="quest"] input[class^="current-point"]').on('change', function () {
-    const value = $(this).val(); // 入力値を取得する
+    let value = $(this).val(); // 入力値を取得する
 
     if (value < 0 || value > 9999999) { // 入力値が0未満または9999999を超える場合
-        $(this).val('0'); // 入力値をクリアにする
+        value = value.slice(0, 7); // 入力値を7桁にする
+        if (value >= 3000000) {
+            value = 3000000;
+        };
+        $(this).val(value);
+        handleFormChange();
     } else {
         handleFormChange();
     };
@@ -108,6 +114,7 @@ $('input[class^="trial-count"]').on('change', function () {
 
     if (value < 0 || value > 100) { // 入力値が0未満または100を超える場合
         $(this).val('100'); // 入力値をクリアにする
+        handleFormChange();
     } else {
         handleFormChange();
     };
@@ -145,7 +152,7 @@ function point_calc() {
     //console.log(point);
 
     //個別等級　必要挑戦回数
-    const curentPoint = [
+    const currentPoint = [
         $('#current-pointA').val(),
         $('#current-pointB').val(),
         $('#current-pointC').val(),
@@ -155,7 +162,7 @@ function point_calc() {
     const SG = []; //single count
     for (let i = 0; i < point.length; i++) {
         SG.push(single.map(element => {
-            return Math.ceil((element - curentPoint[i] >= 0 ? element - curentPoint[i] : 0) / point[i]);
+            return Math.ceil((element - currentPoint[i] >= 0 ? element - currentPoint[i] : 0) / point[i]);
         }));
     };
     console.log(SG);
@@ -256,19 +263,19 @@ function point_calc() {
 
 
         $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][0]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questA-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][0] * point[0]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questA-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][0] - 1] - currentPoint[0] >= 0 ? single[calclated[i][1][0] - 1] - currentPoint[0] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questA-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][0]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questB-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][1]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questB-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][1] * point[1]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questB-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][1] - 1] - currentPoint[1] >= 0 ? single[calclated[i][1][1] - 1] - currentPoint[1] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questB-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][1]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questC-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][2]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questC-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][2] * point[2]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questC-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][2] - 1] - currentPoint[2] >= 0 ? single[calclated[i][1][2] - 1] - currentPoint[2] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questC-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][2]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(calclated[i][0][3] * point[3]).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][3] - 1] - currentPoint[3] >= 0 ? single[calclated[i][1][3] - 1] - currentPoint[3] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questD-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][3]}<span class="d-inline-block small mx-1">/${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-count-margin`).html(`${trialCount - calclated[i][0].reduce((acc, cur) => {
