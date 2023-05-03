@@ -26,6 +26,12 @@ whole = [
     40, 34, 28, 23, 17, 11, 5
 ];
 
+bonus_border = [
+    [10.0, 10.0, 10.0, 5.0, 3.0, 3.0, 2.5],
+    [50, 50, 50, 20, 25, 25, 50],
+    [75, 75, 75, 90, 100, 100, 100],
+];
+
 trial = [
     15, 20, 15, 50
 ];
@@ -53,6 +59,14 @@ kobetsu_image = [
     "erc_phantombattle_tokyu08_rX9b3S",
     "erc_phantombattle_tokyu09_rX9b3S",
     "erc_phantombattle_tokyu10_rX9b3S",
+];
+
+rank_image = [
+    "grade_C_mkjhbji",
+    "grade_B_mkjhbji",
+    "grade_A_mkjhbji",
+    "grade_S_mkjhbji",
+    "grade_SS_mkjhbji"
 ];
 
 sougou_tokyu = [
