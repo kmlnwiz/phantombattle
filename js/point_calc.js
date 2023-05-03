@@ -185,7 +185,7 @@ function point_calc() {
                 for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= trialCount; c++) {
                     for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= trialCount; d++) {
                         const totalCost = A[a] + B[b] + C[c] + D[d];
-                        const totalPoints = a + b + c + d + 4;
+                        const totalPoints = a + b + c + d;
                         if (totalPoints >= GOAL && totalCost <= minCost) {
                             let pri_num = 0;
                             let arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
@@ -201,7 +201,7 @@ function point_calc() {
                                 minCost = totalCost;
                                 result = [
                                     arr,
-                                    [a + 1, b + 1, c + 1, d + 1],
+                                    [a, b, c, d],
                                 ];
                                 priority = pri_num
                                 variance = vary;
@@ -263,19 +263,19 @@ function point_calc() {
 
 
         $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][0]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questA-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][0] - 1] - currentPoint[0] >= 0 ? single[calclated[i][1][0] - 1] - currentPoint[0] : 0).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questA-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][0]] - currentPoint[0] >= 0 ? single[calclated[i][1][0]] - currentPoint[0] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questA-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][0]}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questB-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][1]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questB-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][1] - 1] - currentPoint[1] >= 0 ? single[calclated[i][1][1] - 1] - currentPoint[1] : 0).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questB-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][1]] - currentPoint[1] >= 0 ? single[calclated[i][1][1]] - currentPoint[1] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questB-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][1]}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questC-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][2]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questC-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][2] - 1] - currentPoint[2] >= 0 ? single[calclated[i][1][2] - 1] - currentPoint[2] : 0).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questC-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][2]] - currentPoint[2] >= 0 ? single[calclated[i][1][2]] - currentPoint[2] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questC-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][2]}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="no-save" src="image/${kobetsu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][3] - 1] - currentPoint[3] >= 0 ? single[calclated[i][1][3] - 1] - currentPoint[3] : 0).toLocaleString()}</span>`);
+        $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][3]] - currentPoint[3] >= 0 ? single[calclated[i][1][3]] - currentPoint[3] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questD-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][3]}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>`);
 
         $(`#${sougou_tokyu[i]}-count-margin`).html(`${trialCount - calclated[i][0].reduce((acc, cur) => {
