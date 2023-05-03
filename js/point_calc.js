@@ -3,6 +3,9 @@ function handleFormChange() {
     // フォームの値を取得する
     const input_values = {
         fieldName: ['questA', 'questB', 'questC', 'questD'],
+        questName: $('input[id^="quest-name"]').map(function () {
+            return $(this).val();
+        }).get(),
         sealLevel: $('input[id^="seal-level"]').map(function () {
             return $(this).val();
         }).get(),
@@ -25,7 +28,7 @@ function handleFormChange() {
         point_array.push({
             fieldName: input_values['fieldName'][i],
             sealLevelPoint: level[input_values['sealLevel'][i]],
-            currentPoint: input_values['currentPoint'],
+            currentPoint: input_values['currentPoint'][i],
             avgTimePoint: bonus_calc(i, input_values['avgTime'][i], input_values['sealLevel'][i]),
             clearTurnPoint: bonus_calc(i, input_values['clearTurn'][i], input_values['sealLevel'][i]),
             correctRatePoint: bonus_calc(i, input_values['correctRate'][i], input_values['sealLevel'][i]),
@@ -35,15 +38,20 @@ function handleFormChange() {
     };
     //console.log(input_values, point_array);
 
-    $('#get-pointA').html($('#on_casual').prop('checked') ? (point_array[0]['getPoint'] * 3).toLocaleString() : point_array[0]['getPoint'].toLocaleString());
-    $('#get-pointB').html($('#on_casual').prop('checked') ? (point_array[1]['getPoint'] * 3).toLocaleString() : point_array[1]['getPoint'].toLocaleString());
-    $('#get-pointC').html($('#on_casual').prop('checked') ? (point_array[2]['getPoint'] * 3).toLocaleString() : point_array[2]['getPoint'].toLocaleString());
-    $('#get-pointD').html($('#on_casual').prop('checked') ? (point_array[3]['getPoint'] * 3).toLocaleString() : point_array[3]['getPoint'].toLocaleString());
+    $('#questA-name').html(`${input_values['questName'][0]?input_values['questName'][0]:`クエストA`}`);
+    $('#questB-name').html(`${input_values['questName'][1]?input_values['questName'][1]:`クエストB`}`);
+    $('#questC-name').html(`${input_values['questName'][2]?input_values['questName'][2]:`クエストC`}`);
+    $('#questD-name').html(`${input_values['questName'][3]?input_values['questName'][3]:`クエストD`}`);
 
-    $('#questA-get-point').html($('#on_casual').prop('checked') ? (point_array[0]['getPoint'] * 3).toLocaleString() : point_array[0]['getPoint'].toLocaleString());
-    $('#questB-get-point').html($('#on_casual').prop('checked') ? (point_array[1]['getPoint'] * 3).toLocaleString() : point_array[1]['getPoint'].toLocaleString());
-    $('#questC-get-point').html($('#on_casual').prop('checked') ? (point_array[2]['getPoint'] * 3).toLocaleString() : point_array[2]['getPoint'].toLocaleString());
-    $('#questD-get-point').html($('#on_casual').prop('checked') ? (point_array[3]['getPoint'] * 3).toLocaleString() : point_array[3]['getPoint'].toLocaleString());
+    $('#get-pointA').html($('#on_casual').prop('checked') ? `${(point_array[0]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[0]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+    $('#get-pointB').html($('#on_casual').prop('checked') ? `${(point_array[1]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[1]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+    $('#get-pointC').html($('#on_casual').prop('checked') ? `${(point_array[2]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[2]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+    $('#get-pointD').html($('#on_casual').prop('checked') ? `${(point_array[3]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[3]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+
+    $('#questA-get-point').html($('#on_casual').prop('checked') ? `${(point_array[0]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[0]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+    $('#questB-get-point').html($('#on_casual').prop('checked') ? `${(point_array[1]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[1]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+    $('#questC-get-point').html($('#on_casual').prop('checked') ? `${(point_array[2]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[2]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+    $('#questD-get-point').html($('#on_casual').prop('checked') ? `${(point_array[3]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[3]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
 
     $('#questA-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][0]}`);
     $('#questB-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][1]}`);
@@ -85,14 +93,19 @@ function handleFormChange() {
     //$('#questC-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][2]/5)])}%以上でSS`);
     //$('#questD-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][3]/5)])}%以上でSS`);
 
+    const date = new Date();
+    $('#generate-date').html(`generated ${date.getFullYear()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${('00' + (date.getDate())).slice(-2)}`);
+
+
     $('#which-mode').html($('#on_casual').prop('checked') ? '<span class="col d-inline-block text-bg-success text-center py-1">カジュアルモード</span>' : '<span class="col d-inline-block text-bg-danger text-center py-1">チャレンジモード</span>');
-    point_calc()
+    point_calc(point_array);
 };
 
 handleFormChange();
 
 // idが"quest"から始まる要素内のフォームの変更を監視する
 $('[id^="quest"] select').on('change', handleFormChange);
+$('input[id^="quest-name"]').on('change', handleFormChange);
 $('#on_casual').on('change', handleFormChange);
 
 // input要素に対して、値が変更されたときのイベントを設定する
@@ -153,26 +166,27 @@ function bonus_calc(i, rank, seal) {
 
 
 //幻闘戦　総合等級計算
-function point_calc() {
+function point_calc(arr) {
 
     const calclated = [];
     const trialCount = $('#trial-count').val();
 
     const point = [
-        Number($('#get-pointA').text().replace(/,/g, '')),
-        Number($('#get-pointB').text().replace(/,/g, '')),
-        Number($('#get-pointC').text().replace(/,/g, '')),
-        Number($('#get-pointD').text().replace(/,/g, ''))
+        Number(arr[0]['getPoint']),
+        Number(arr[1]['getPoint']),
+        Number(arr[2]['getPoint']),
+        Number(arr[3]['getPoint'])
     ];
     //console.log(point);
 
     //個別等級　必要挑戦回数
     const currentPoint = [
-        $('#current-pointA').val(),
-        $('#current-pointB').val(),
-        $('#current-pointC').val(),
-        $('#current-pointD').val(),
+        Number(arr[0]['currentPoint']),
+        Number(arr[1]['currentPoint']),
+        Number(arr[2]['currentPoint']),
+        Number(arr[3]['currentPoint']),
     ];
+    //console.log(currentPoint);
 
     const SG = []; //single count
     for (let i = 0; i < point.length; i++) {
