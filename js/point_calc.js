@@ -138,7 +138,7 @@ $('input[id^="quest-name"]').on('change', function () {
     value = escapeHtml(value);
     value = escapeJs(value);
 
-    //$(this).val(value);
+    $(this).val(value);
     handleFormChange();
 });
 
