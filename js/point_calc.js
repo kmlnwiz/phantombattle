@@ -5,22 +5,22 @@ function handleFormChange() {
         field: ['A', 'B', 'C', 'D'],
         fieldName: ['questA', 'questB', 'questC', 'questD'],
         questName: $('input[id^="quest-name"]').map(function () {
-            return $(this).val();
+            return escapeJs(escapeHtml($(this).val()));
         }).get(),
         sealLevel: $('input[id^="seal-level"]').map(function () {
-            return $(this).val();
+            return escapeJs(escapeHtml($(this).val()));
         }).get(),
         currentPoint: $('input[id^="current-point"]').map(function () {
-            return $(this).val();
+            return escapeJs(escapeHtml($(this).val()));
         }).get(),
         avgTime: $('select[id^="average-time"]').map(function () {
-            return $(this).val();
+            return escapeJs(escapeHtml($(this).val()));
         }).get(),
         clearTurn: $('select[id^="clear-turn"]').map(function () {
-            return $(this).val();
+            return escapeJs(escapeHtml($(this).val()));
         }).get(),
         correctRate: $('select[id^="correct-rate"]').map(function () {
-            return $(this).val();
+            return escapeJs(escapeHtml($(this).val()));
         }).get()
     };
 
@@ -83,8 +83,8 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
     let value = $(this).val(); // 入力値を取得する
 
     //エスケープ処理
-    value = escapeHtml(value);
-    value = escapeJs(value);
+    //value = escapeHtml(value);
+    //value = escapeJs(value);
 
     if (value >= 0 && value <= 30) { // 入力値が0以上30以下の場合
         handleFormChange();
@@ -99,8 +99,8 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     let value = $(this).val(); // 入力値を取得する
 
     //エスケープ処理
-    value = escapeHtml(value);
-    value = escapeJs(value);
+    //value = escapeHtml(value);
+    //value = escapeJs(value);
 
     if (value >= 0 && value <= 9999999) { // 入力値が0以上9999999以下の場合
         handleFormChange();
@@ -119,8 +119,8 @@ $('input[class^="trial-count"]').on('change', function () {
     let value = $(this).val(); // 入力値を取得する
 
     //エスケープ処理
-    value = escapeHtml(value);
-    value = escapeJs(value);
+    //value = escapeHtml(value);
+    //value = escapeJs(value);
 
     if (value >= 0 && value <= 100) { // 入力値が0以上100以下の場合
         handleFormChange();
@@ -135,8 +135,8 @@ $('input[id^="quest-name"]').on('change', function () {
     let value = $(this).val(); // 入力値を取得する
 
     //エスケープ処理
-    value = escapeHtml(value);
-    value = escapeJs(value);
+    //value = escapeHtml(value);
+    //value = escapeJs(value);
 
     $(this).val(value);
     handleFormChange();
