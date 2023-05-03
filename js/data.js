@@ -44,7 +44,7 @@ bonus_border = {
         [90],
         [100],
         [100]
-    ],
+    ]
 };
 
 trial = [
@@ -86,4 +86,4 @@ rank_image = [
 
 sougou_tokyu = [
     "SS", "S", "A", "B", "C", "D", "E"
-]
+];
