@@ -2,6 +2,7 @@
 function handleFormChange() {
     // フォームの値を取得する
     const input_values = {
+        field: ['A', 'B', 'C', 'D'],
         fieldName: ['questA', 'questB', 'questC', 'questD'],
         questName: $('input[id^="quest-name"]').map(function () {
             return $(this).val();
@@ -26,6 +27,7 @@ function handleFormChange() {
     const point_array = [];
     for (let i = 0; i < 4; i++) {
         point_array.push({
+            field: input_values['field'][i],
             fieldName: input_values['fieldName'][i],
             sealLevelPoint: level[input_values['sealLevel'][i]],
             currentPoint: input_values['currentPoint'][i],
@@ -38,60 +40,29 @@ function handleFormChange() {
     };
     //console.log(input_values, point_array);
 
-    $('#questA-name').html(`${input_values['questName'][0]?input_values['questName'][0]:`クエストA`}`);
-    $('#questB-name').html(`${input_values['questName'][1]?input_values['questName'][1]:`クエストB`}`);
-    $('#questC-name').html(`${input_values['questName'][2]?input_values['questName'][2]:`クエストC`}`);
-    $('#questD-name').html(`${input_values['questName'][3]?input_values['questName'][3]:`クエストD`}`);
+    for (let i = 0; i < point_array.length; i++) {
+        $(`#quest${point_array[i]['field']}-name`).html(`${input_values['questName'][i] ? input_values['questName'][i] : `クエスト${point_array[i]['field']}`}`);
 
-    $('#get-pointA').html($('#on_casual').prop('checked') ? `${(point_array[0]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[0]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-    $('#get-pointB').html($('#on_casual').prop('checked') ? `${(point_array[1]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[1]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-    $('#get-pointC').html($('#on_casual').prop('checked') ? `${(point_array[2]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[2]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-    $('#get-pointD').html($('#on_casual').prop('checked') ? `${(point_array[3]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[3]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+        $(`#get-point${point_array[i]['field']}`).html($('#on_casual').prop('checked') ? `${(point_array[i]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
 
-    $('#questA-get-point').html($('#on_casual').prop('checked') ? `${(point_array[0]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[0]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-    $('#questB-get-point').html($('#on_casual').prop('checked') ? `${(point_array[1]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[1]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-    $('#questC-get-point').html($('#on_casual').prop('checked') ? `${(point_array[2]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[2]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-    $('#questD-get-point').html($('#on_casual').prop('checked') ? `${(point_array[3]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[3]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+        $(`#quest${point_array[i]['field']}-get-point`).html($('#on_casual').prop('checked') ? `${(point_array[i]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
 
-    $('#questA-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][0]}`);
-    $('#questB-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][1]}`);
-    $('#questC-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][2]}`);
-    $('#questD-seal-level').html(`<span class="small">Lv. </span>${input_values['sealLevel'][3]}`);
+        $(`#quest${point_array[i]['field']}-seal-level`).html(`<span class="small">Lv. </span>${input_values['sealLevel'][i]}`);
 
-    $('#questA-current-point').html(`${Number(input_values['currentPoint'][0]).toLocaleString()}<span class="small"> Pt</span>`);
-    $('#questB-current-point').html(`${Number(input_values['currentPoint'][1]).toLocaleString()}<span class="small"> Pt</span>`);
-    $('#questC-current-point').html(`${Number(input_values['currentPoint'][2]).toLocaleString()}<span class="small"> Pt</span>`);
-    $('#questD-current-point').html(`${Number(input_values['currentPoint'][3]).toLocaleString()}<span class="small"> Pt</span>`);
+        $(`#quest${point_array[i]['field']}-current-point`).html(`${Number(input_values['currentPoint'][i]).toLocaleString()}<span class="small"> Pt</span>`);
 
-    $('#questA-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][0]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questB-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][1]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questC-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][2]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questD-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][3]}_mkjhbji.png" style="height:1.75em;">`);
+        $(`#quest${point_array[i]['field']}-avg-rank`).html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][i]}_mkjhbji.png" style="height:1.75em;">`);
 
-    //$('#questA-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][0]/5)]).toFixed(1)}秒以内でSS`);
-    //$('#questB-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][1]/5)]).toFixed(1)}秒以内でSS`);
-    //$('#questC-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][2]/5)]).toFixed(1)}秒以内でSS`);
-    //$('#questD-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][3]/5)]).toFixed(1)}秒以内でSS`);
+        //$(`#quest${point_array[i]['field']}-avg-rank-border`).html(`${(bonus_border[i][Math.floor(input_values['sealLevel'][i]/5)]).toFixed(1)}秒以内でSS`);
 
-    $('#questA-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][0]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questB-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][1]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questC-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][2]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questD-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][3]}_mkjhbji.png" style="height:1.75em;">`);
+        $(`#quest${point_array[i]['field']}-turn-rank`).html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][i]}_mkjhbji.png" style="height:1.75em;">`);
 
-    //$('#questA-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][0]/5)])}ﾀｰﾝ以内でSS`);
-    //$('#questB-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][1]/5)])}ﾀｰﾝ以内でSS`);
-    //$('#questC-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][2]/5)])}ﾀｰﾝ以内でSS`);
-    //$('#questD-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][3]/5)])}ﾀｰﾝ以内でSS`);
+        //$(`#quest${point_array[i]['field']}-turn-rank-border`).html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][i]/5)])}ﾀｰﾝ以内でSS`);
 
-    $('#questA-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][0]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questB-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][1]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questC-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][2]}_mkjhbji.png" style="height:1.75em;">`);
-    $('#questD-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][3]}_mkjhbji.png" style="height:1.75em;">`);
+        $(`#quest${point_array[i]['field']}-correct-rank`).html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][i]}_mkjhbji.png" style="height:1.75em;">`);
 
-    //$('#questA-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][0]/5)])}%以上でSS`);
-    //$('#questB-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][1]/5)])}%以上でSS`);
-    //$('#questC-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][2]/5)])}%以上でSS`);
-    //$('#questD-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][3]/5)])}%以上でSS`);
+        //$(`#quest${point_array[i]['field']}-correct-rank-border`).html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][i]/5)])}%以上でSS`);
+    };
 
     const date = new Date();
     $('#generate-date').html(`generated ${date.getFullYear()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${('00' + (date.getDate())).slice(-2)}`);
@@ -105,17 +76,16 @@ handleFormChange();
 
 // idが"quest"から始まる要素内のフォームの変更を監視する
 $('[id^="quest"] select').on('change', handleFormChange);
-$('input[id^="quest-name"]').on('change', handleFormChange);
 $('#on_casual').on('change', handleFormChange);
 
 // input要素に対して、値が変更されたときのイベントを設定する
 $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
     const value = $(this).val(); // 入力値を取得する
 
-    if (value < 0 || value > 30) { // 入力値が0未満または30を超える場合
-        $(this).val('25'); // 入力値をにする
+    if (value >= 0 && value <= 30) { // 入力値が0以上30以下を超える場合
         handleFormChange();
     } else {
+        $(this).val('25'); // 入力値をにする
         handleFormChange();
     };
 });
@@ -124,7 +94,7 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
 $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     let value = $(this).val(); // 入力値を取得する
 
-    if (value < 0 || value > 9999999) { // 入力値が0未満または9999999を超える場合
+    if (value >= 0 && value <= 9999999) { // 入力値が0以上9999999以下を超える場合
         value = value.slice(0, 7); // 入力値を7桁にする
         if (value >= 3000000) {
             value = 3000000;
@@ -140,12 +110,24 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
 $('input[class^="trial-count"]').on('change', function () {
     const value = $(this).val(); // 入力値を取得する
 
-    if (value < 0 || value > 100) { // 入力値が0未満または100を超える場合
+    if (value >= 0 && value <= 100 ) { // 入力値が0以上100以下を超える場合
         $(this).val('100'); // 入力値をクリアにする
         handleFormChange();
     } else {
         handleFormChange();
     };
+});
+
+// input要素に対して、値が変更されたときのイベントを設定する
+$('input[id^="quest-name"]').on('change', function () {
+    let value = $(this).val(); // 入力値を取得する
+
+    //エスケープ処理
+    value = escapeHtml(value);
+    value = escapeJs(value);
+
+    $(this).val(value);
+        handleFormChange();
 });
 
 function bonus_calc(i, rank, seal) {
@@ -317,3 +299,33 @@ function point_calc(arr) {
 
 
 };
+
+function escapeHtml(str) {
+  return str.replace(/[&'`"<>]/g, function(match) {
+    return {
+      '&': '&amp;',
+      "'": '&#x27;',
+      '`': '&#x60;',
+      '"': '&quot;',
+      '<': '&lt;',
+        '>': '&gt;',
+      '\\': '\\'
+    }[match];
+  });
+};
+
+function escapeJs(str) {
+  return str.replace(/[\\'"\/\b\f\n\r\t]/g, function(match) {
+    return {
+      '\\': '\\\\',
+      '"': '\\"',
+      "'": "\\'",
+      '/': '\\/',
+      '\b': '\\b',
+      '\f': '\\f',
+      '\n': '\\n',
+      '\r': '\\r',
+      '\t': '\\t'
+    }[match];
+  });
+}
