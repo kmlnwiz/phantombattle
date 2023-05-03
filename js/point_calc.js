@@ -278,9 +278,11 @@ function point_calc() {
         $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${(single[calclated[i][1][3]] - currentPoint[3] >= 0 ? single[calclated[i][1][3]] - currentPoint[3] : 0).toLocaleString()}</span>`);
         $(`#${sougou_tokyu[i]}-questD-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.0em;">${calclated[i][0][3]}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>`);
 
-        $(`#${sougou_tokyu[i]}-count-margin`).html(`${trialCount - calclated[i][0].reduce((acc, cur) => {
+        $(`#${sougou_tokyu[i]}-count-margin`).html(calclated[i][1].reduce((acc, cur) => {
             return acc + cur;
-        }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span>`);
+        }, 0) > 0 ? `${trialCount - calclated[i][0].reduce((acc, cur) => {
+            return acc + cur;
+        }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span>` : `<span class="d-inline-block small mx-1 text-danger">達成不可</span>`);
 
     };
 
