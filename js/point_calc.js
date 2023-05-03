@@ -138,7 +138,7 @@ $('input[id^="quest-name"]').on('change', function () {
     //value = escapeHtml(value);
     //value = escapeJs(value);
 
-    $(this).val(value);
+    //$(this).val(es(value));
     handleFormChange();
 });
 
@@ -163,7 +163,7 @@ function bonus_calc(i, rank, seal) {
 function point_calc(arr) {
 
     const calclated = [];
-    const trialCount = $('#trial-count').val();
+    const trialCount = escapeJs(escapeHtml($('#trial-count').val()));
 
     const point = [
         Number(arr[0]['getPoint']),
