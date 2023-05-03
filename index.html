@@ -40,13 +40,13 @@
 
         <div id="option" class="col col-lg-6 p-3 mb-3 border rounded">
             <div class="mb-2">
-                <label class="" for="trial-count">残り挑戦回数</label>
+                <label class="" for="trial-count">残り挑戦回数<span class="small text-muted ms-2">（残り日数 × 5）</span></label>
                 <input type="number" class="trial-count form-control" id="trial-count" placeholder="" min="0" max="100" step="5" value="100">
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="on_casual">
                 <label class="form-check-label" for="on_casual">
-                    カジュアルモード（獲得ポイント3倍、総合等級A上限）
+                    カジュアルモードにする<span class="small text-muted ms-2">（獲得ポイント3倍、総合等級A上限）</span>
                 </label>
             </div>
         </div>
@@ -854,8 +854,9 @@
 
         <div class="row row-cols-1 g-0">
             <div class="alert alert-info" role="alert">
-                挑戦回数及び総合等級が同様となる解が複数ある場合は、そのうちの1つを表示します。<br>
-                〈表示優先〉<br>
+                入力された情報から、どのクエストをどのくらいクリアすれば目標の総合等級を達成できるかを計算します。<br>
+                挑戦回数及び総合等級が同様となる解が複数ある場合は、そのうちの1つを表示します。<br><br>
+                〈優先される事項〉<br>
                 ➀合計の挑戦回数が最小<br>
                 ➁合計の挑戦日数が最小<br>
                 ➂挑戦回数の偏りが最小
