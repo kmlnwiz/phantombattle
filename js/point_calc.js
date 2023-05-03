@@ -55,20 +55,35 @@ function handleFormChange() {
     $('#questC-current-point').html(`${Number(input_values['currentPoint'][2]).toLocaleString()}<span class="small"> Pt</span>`);
     $('#questD-current-point').html(`${Number(input_values['currentPoint'][3]).toLocaleString()}<span class="small"> Pt</span>`);
 
-    $('#questA-avg-rank').html(input_values['avgTime'][0]);
-    $('#questB-avg-rank').html(input_values['avgTime'][1]);
-    $('#questC-avg-rank').html(input_values['avgTime'][2]);
-    $('#questD-avg-rank').html(input_values['avgTime'][3]);
+    $('#questA-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][0]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questB-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][1]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questC-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][2]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questD-avg-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][3]}_mkjhbji.png" style="height:1.75em;">`);
 
-    $('#questA-turn-rank').html(input_values['clearTurn'][0]);
-    $('#questB-turn-rank').html(input_values['clearTurn'][1]);
-    $('#questC-turn-rank').html(input_values['clearTurn'][2]);
-    $('#questD-turn-rank').html(input_values['clearTurn'][3]);
+    //$('#questA-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][0]/5)]).toFixed(1)}秒以内でSS`);
+    //$('#questB-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][1]/5)]).toFixed(1)}秒以内でSS`);
+    //$('#questC-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][2]/5)]).toFixed(1)}秒以内でSS`);
+    //$('#questD-avg-rank-border').html(`${(bonus_border[0][Math.floor(input_values['sealLevel'][3]/5)]).toFixed(1)}秒以内でSS`);
 
-    $('#questA-correct-rank').html(input_values['correctRate'][0]);
-    $('#questB-correct-rank').html(input_values['correctRate'][1]);
-    $('#questC-correct-rank').html(input_values['correctRate'][2]);
-    $('#questD-correct-rank').html(input_values['correctRate'][3]);
+    $('#questA-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][0]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questB-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][1]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questC-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][2]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questD-turn-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][3]}_mkjhbji.png" style="height:1.75em;">`);
+
+    //$('#questA-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][0]/5)])}ﾀｰﾝ以内でSS`);
+    //$('#questB-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][1]/5)])}ﾀｰﾝ以内でSS`);
+    //$('#questC-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][2]/5)])}ﾀｰﾝ以内でSS`);
+    //$('#questD-turn-rank-border').html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][3]/5)])}ﾀｰﾝ以内でSS`);
+
+    $('#questA-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][0]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questB-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][1]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questC-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][2]}_mkjhbji.png" style="height:1.75em;">`);
+    $('#questD-correct-rank').html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][3]}_mkjhbji.png" style="height:1.75em;">`);
+
+    //$('#questA-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][0]/5)])}%以上でSS`);
+    //$('#questB-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][1]/5)])}%以上でSS`);
+    //$('#questC-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][2]/5)])}%以上でSS`);
+    //$('#questD-correct-rank-border').html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][3]/5)])}%以上でSS`);
 
     $('#which-mode').html($('#on_casual').prop('checked') ? '<span class="col d-inline-block text-bg-success text-center py-1">カジュアルモード</span>' : '<span class="col d-inline-block text-bg-danger text-center py-1">チャレンジモード</span>');
     point_calc()
