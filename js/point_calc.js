@@ -80,12 +80,16 @@ $('#on_casual').on('change', handleFormChange);
 
 // input要素に対して、値が変更されたときのイベントを設定する
 $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
-    const value = $(this).val(); // 入力値を取得する
+    let value = $(this).val(); // 入力値を取得する
 
-    if (value >= 0 && value <= 30) { // 入力値が0以上30以下を超える場合
+    //エスケープ処理
+    value = escapeHtml(value);
+    value = escapeJs(value);
+
+    if (value >= 0 && value <= 30) { // 入力値が0以上30以下の場合
         handleFormChange();
     } else {
-        $(this).val('25'); // 入力値をにする
+        $(this).val('25'); // 入力値を25にする
         handleFormChange();
     };
 });
@@ -94,26 +98,34 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
 $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     let value = $(this).val(); // 入力値を取得する
 
-    if (value >= 0 && value <= 9999999) { // 入力値が0以上9999999以下を超える場合
+    //エスケープ処理
+    value = escapeHtml(value);
+    value = escapeJs(value);
+
+    if (value >= 0 && value <= 9999999) { // 入力値が0以上9999999以下の場合
+        handleFormChange();
+    } else {
         value = value.slice(0, 7); // 入力値を7桁にする
         if (value >= 3000000) {
             value = 3000000;
         };
         $(this).val(value);
         handleFormChange();
-    } else {
-        handleFormChange();
     };
 });
 
 // input要素に対して、値が変更されたときのイベントを設定する
 $('input[class^="trial-count"]').on('change', function () {
-    const value = $(this).val(); // 入力値を取得する
+    let value = $(this).val(); // 入力値を取得する
 
-    if (value >= 0 && value <= 100 ) { // 入力値が0以上100以下を超える場合
-        $(this).val('100'); // 入力値をクリアにする
+    //エスケープ処理
+    value = escapeHtml(value);
+    value = escapeJs(value);
+
+    if (value >= 0 && value <= 100) { // 入力値が0以上100以下の場合
         handleFormChange();
     } else {
+        $(this).val('100'); // 入力値をクリアにする
         handleFormChange();
     };
 });
@@ -126,8 +138,8 @@ $('input[id^="quest-name"]').on('change', function () {
     value = escapeHtml(value);
     value = escapeJs(value);
 
-    $(this).val(value);
-        handleFormChange();
+    //$(this).val(value);
+    handleFormChange();
 });
 
 function bonus_calc(i, rank, seal) {
@@ -301,31 +313,31 @@ function point_calc(arr) {
 };
 
 function escapeHtml(str) {
-  return str.replace(/[&'`"<>]/g, function(match) {
-    return {
-      '&': '&amp;',
-      "'": '&#x27;',
-      '`': '&#x60;',
-      '"': '&quot;',
-      '<': '&lt;',
-        '>': '&gt;',
-      '\\': '\\'
-    }[match];
-  });
+    return str.replace(/[&'`"<>]/g, function (match) {
+        return {
+            '&': '&amp;',
+            "'": '&#x27;',
+            '`': '&#x60;',
+            '"': '&quot;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '\\': '\\'
+        } [match];
+    });
 };
 
 function escapeJs(str) {
-  return str.replace(/[\\'"\/\b\f\n\r\t]/g, function(match) {
-    return {
-      '\\': '\\\\',
-      '"': '\\"',
-      "'": "\\'",
-      '/': '\\/',
-      '\b': '\\b',
-      '\f': '\\f',
-      '\n': '\\n',
-      '\r': '\\r',
-      '\t': '\\t'
-    }[match];
-  });
+    return str.replace(/[\\'"\/\b\f\n\r\t]/g, function (match) {
+        return {
+            '\\': '\\\\',
+            '"': '\\"',
+            "'": "\\'",
+            '/': '\\/',
+            '\b': '\\b',
+            '\f': '\\f',
+            '\n': '\\n',
+            '\r': '\\r',
+            '\t': '\\t'
+        } [match];
+    });
 }
