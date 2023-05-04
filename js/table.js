@@ -51,7 +51,7 @@ $(function () {
         let html = '';
         html +=
             `<table class="table table-hover table-sm">` +
-            `<thead class="sticky-top bg-body table-sticky-border">` +
+            `<thead class="">` +
             `<tr class="">`;
 
         for (let i = 0; i < data['thead'].length; i++) {
