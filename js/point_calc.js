@@ -85,6 +85,7 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
     //エスケープ処理
     //value = escapeHtml(value);
     //value = escapeJs(value);
+    value = toHalf(value);
 
     if (value >= 0 && value <= 30) { // 入力値が0以上30以下の場合
         handleFormChange();
@@ -101,6 +102,7 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     //エスケープ処理
     //value = escapeHtml(value);
     //value = escapeJs(value);
+    value = toHalf(value);
 
     if (value >= 0 && value <= 9999999) { // 入力値が0以上9999999以下の場合
         handleFormChange();
@@ -108,6 +110,8 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
         value = value.slice(0, 7); // 入力値を7桁にする
         if (value >= 3000000) {
             value = 3000000;
+        } else if (value < 0) {
+            value = 0;
         };
         $(this).val(value);
         handleFormChange();
@@ -121,6 +125,7 @@ $('input[class^="trial-count"]').on('change', function () {
     //エスケープ処理
     //value = escapeHtml(value);
     //value = escapeJs(value);
+    value = toHalf(value);
 
     if (value >= 0 && value <= 100) { // 入力値が0以上100以下の場合
         handleFormChange();
@@ -340,4 +345,10 @@ function escapeJs(str) {
             '\t': '\\t'
         } [match];
     });
-}
+};
+
+function toHalf(str) {
+    return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    });
+};
