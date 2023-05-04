@@ -226,7 +226,7 @@ function point_calc(arr) {
                             const avg = arr.reduce((acc, val) => acc + val) / arr.length;
                             const vary = arr.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0) / arr.length;
 
-                            if (priority >= pri_num && variance >= vary) {
+                            if (priority >= pri_num) {
                                 minCost = totalCost;
                                 result = [
                                     arr,
