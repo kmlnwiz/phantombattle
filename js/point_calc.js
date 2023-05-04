@@ -204,10 +204,22 @@ function point_calc(arr) {
 
     for (let i = 0; i < 5; i++) {
         let minCost = Infinity;
-        let result = [];
-        let minDays = trialCount / 5;
+        let minDays = Infinity;
         let variance = Infinity;
         let totalPoint = whole[i];
+
+        // 最適な組み合わせ
+        let bestResult = null;
+
+        // 条件に合致する全ての組み合わせを保存するための配列
+        const allResults = [{
+                                arr:[0,0,0,0],
+                                indexes: [0, 0, 0, 0],
+                                days: Infinity,
+                                cost: Infinity,
+                                variance: Infinity
+                            }];
+
 
         for (let a = 0; a < A.length && A[a] <= trialCount; a++) {
             for (let b = 0; b < B.length && A[a] + B[b] <= trialCount; b++) {
@@ -217,47 +229,50 @@ function point_calc(arr) {
                         const POINT = a + b + c + d;
 
                         if (POINT >= totalPoint) {
+                            const arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
+                            const DAYS = arr.reduce((acc, cur) => {
+                                return acc + Math.ceil(cur / 5);
+                            }, 0);
+                            const AVG = arr.reduce((acc, val) => acc + val) / arr.length;
+                            const VARY = arr.reduce((acc, val) => acc + Math.pow(val - AVG, 2), 0) / arr.length;
 
-                            //算出優先度設定
-                            //優先度➀　総回数最小
-                            if (COST <= minCost) {
-
-                                const arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
-                                const DAYS = arr.reduce((acc, cur) => {
-                                    return acc + Math.ceil(cur / 5);
-                                }, 0);
-                                const AVG = arr.reduce((acc, val) => acc + val) / arr.length;
-                                const VARY = arr.reduce((acc, val) => acc + Math.pow(val - AVG, 2), 0) / arr.length;
-
-                                //優先度➁　各日数最小
-                                if (COST < minCost) {
-                                    minDays = DAYS;
-                                };
-
-                                //優先度➂　分散最小
-                                if (COST <= minCost && DAYS < minDays) {
-                                    variance = VARY;
-                                };
-
-                                //条件に合致する組み合わせを出力
-                                if (minDays >= DAYS && VARY <= variance) {
-                                    minCost = COST;
-                                    result = [
-                                        arr,
-                                        [a, b, c, d],
-                                    ];
-                                    //minDays = DAYS
-                                    //variance = VARY;
-                                };
-
-                            };
+                            allResults.push({
+                                arr,
+                                indexes: [a, b, c, d],
+                                days: DAYS,
+                                cost: COST,
+                                variance: VARY
+                            });
                         };
-
                     };
                 };
             };
         };
-        calclated.push(result);
+
+        // 最適な組み合わせを選択
+        if (allResults.length > 0) {
+            // 優先度①　総回数最小
+            allResults.sort((a, b) => a.cost - b.cost);
+
+            // 優先度②　各日数最小
+            const minCostResults = allResults.filter(
+                result => result.cost === allResults[0].cost
+            );
+            minCostResults.sort((a, b) => a.days - b.days);
+
+            // 優先度③　分散最小
+            const minDaysResults = minCostResults.filter(
+                result => result.days === minCostResults[0].days
+            );
+            minDaysResults.sort((a, b) => a.variance - b.variance);
+
+            bestResult = minDaysResults[0];
+        }
+
+        // bestResultに最適な組み合わせが保存される
+        console.log(`個別等級${totalPoint}`,bestResult);
+
+        calclated.push([bestResult['arr'],bestResult['indexes']]);
     };
 
     for (let i = 0; i < calclated.length; i++) {
