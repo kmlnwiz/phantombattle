@@ -47,17 +47,53 @@
                 </form>
 
             </div>-->
-
-        <div id="option" class="col col-lg-6 p-3 mb-3 border">
-            <div class="mb-2">
-                <label class="" for="trial-count">残り挑戦回数<span class="small text-muted ms-2">（残り日数 × 5）</span></label>
-                <input type="number" class="trial-count form-control" id="trial-count" placeholder="" min="0" max="100" step="5" value="100" maxlength="3">
+        <div class="row g-0 mb-3">
+            <div id="option" class="col-12 col-lg-6 p-3 border">
+                <div class="mb-2">
+                    <label class="" for="trial-count">残り挑戦回数<span class="small text-muted ms-2">（残り日数 × 5）</span></label>
+                    <input type="number" class="trial-count form-control" id="trial-count" placeholder="" min="0" max="100" step="5" value="100" maxlength="3">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="on_casual">
+                    <label class="form-check-label" for="on_casual">
+                        カジュアルモードにする<span class="small text-muted ms-2">（獲得ポイント3倍、総合等級A上限）</span>
+                    </label>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="on_casual">
-                <label class="form-check-label" for="on_casual">
-                    カジュアルモードにする<span class="small text-muted ms-2">（獲得ポイント3倍、総合等級A上限）</span>
-                </label>
+
+            <div class="col-12 col-lg-6 p-3 border">
+                <div class="accordion accordion-flush" id="accordionFlush">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                総合等級ボーダー
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse">
+                            <div id="acc-item1" class="accordion-body"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                個別等級ボーダー
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse">
+                            <div id="acc-item2" class="accordion-body"></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                刻印レベル別獲得ポイント
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse">
+                            <div id="acc-item3" class="accordion-body"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -556,7 +592,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questA-name" style="font-size:1.05em;">クエストA</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="SS-questA-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.50em;"></div>
+                                    <div id="SS-questA-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.50em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -571,7 +607,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questB-name" style="font-size:1.05em;">クエストB</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="SS-questB-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="SS-questB-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -586,7 +622,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questC-name" style="font-size:1.05em;">クエストC</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="SS-questC-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="SS-questC-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -601,7 +637,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questD-name" style="font-size:1.05em;">クエストD</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="SS-questD-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="SS-questD-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -638,7 +674,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questA-name" style="font-size:1.05em;">クエストA</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="S-questA-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="S-questA-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -653,7 +689,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questB-name" style="font-size:1.05em;">クエストB</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="S-questB-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="S-questB-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -668,7 +704,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questC-name" style="font-size:1.05em;">クエストC</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="S-questC-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="S-questC-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -683,7 +719,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questD-name" style="font-size:1.05em;">クエストD</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="S-questD-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="S-questD-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -720,7 +756,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questA-name" style="font-size:1.05em;">クエストA</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="A-questA-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="A-questA-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -735,7 +771,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questB-name" style="font-size:1.05em;">クエストB</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="A-questB-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="A-questB-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -750,7 +786,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questC-name" style="font-size:1.05em;">クエストC</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="A-questC-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="A-questC-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -765,7 +801,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questD-name" style="font-size:1.05em;">クエストD</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="A-questD-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="A-questD-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -801,7 +837,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questA-name" style="font-size:1.05em;">クエストA</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="B-questA-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="B-questA-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -816,7 +852,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questB-name" style="font-size:1.05em;">クエストB</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="B-questB-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="B-questB-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -831,7 +867,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questC-name" style="font-size:1.05em;">クエストC</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="B-questC-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="B-questC-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -846,7 +882,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questD-name" style="font-size:1.05em;">クエストD</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="B-questD-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="B-questD-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -883,7 +919,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questA-name" style="font-size:1.05em;">クエストA</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="C-questA-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="C-questA-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -898,7 +934,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questB-name" style="font-size:1.05em;">クエストB</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="C-questB-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="C-questB-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -913,7 +949,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questC-name" style="font-size:1.05em;">クエストC</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="C-questC-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="C-questC-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -928,7 +964,7 @@
                                 <div class="row">
                                     <div class="col-12 fs-5 align-self-center fw-bold text-truncate questD-name" style="font-size:1.05em;">クエストD</div>
                                     <div class="col-5 text-center align-self-center">個別等級</div>
-                                    <div id="C-questD-single-rank" class="col h5 text-center mb-0"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
+                                    <div id="C-questD-single-rank" class="col h5 text-center mb-1"><img class="mb-0 no-save" src="image/erc_phantombattle_tokyu00_rX9b3S.png" style="height:2.5em;"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 text-center align-self-center">ポイント</div>
@@ -1010,6 +1046,7 @@
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-alpha.12/dist/html2canvas.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/point_calc.js"></script>
+    <script src="js/table.js"></script>
 
     <script>
         var listItems = "";
@@ -1150,6 +1187,17 @@
             user-select: none;
             /* Non-prefixed version, currently
                         supported by Chrome and Opera */
+        }
+
+        .table-sticky-border::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-bottom: calc(var(--bs-border-width) * 2) solid currentcolor;
+            z-index: -1;
         }
     </style>
 </body>
