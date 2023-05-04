@@ -37,15 +37,16 @@ function handleFormChange() {
             getPoint: 0,
         });
         point_array[i]['getPoint'] = point_array[i]['sealLevelPoint'] + point_array[i]['avgTimePoint'] + point_array[i]['clearTurnPoint'] + point_array[i]['correctRatePoint'];
+        $('#on_casual').prop('checked') ? point_array[i]['getPoint'] = point_array[i]['getPoint'] * 3 : '';
     };
     //console.log(input_values, point_array);
 
     for (let i = 0; i < point_array.length; i++) {
         $(`.quest${point_array[i]['field']}-name`).html(`${input_values['questName'][i] ? input_values['questName'][i] : `クエスト${point_array[i]['field']}`}`);
 
-        $(`#get-point${point_array[i]['field']}`).html($('#on_casual').prop('checked') ? `${(point_array[i]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+        $(`#get-point${point_array[i]['field']}`).html(`${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
 
-        $(`#quest${point_array[i]['field']}-get-point`).html($('#on_casual').prop('checked') ? `${(point_array[i]['getPoint'] * 3).toLocaleString()}<span class="small"> Pt</span>` : `${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
+        $(`#quest${point_array[i]['field']}-get-point`).html(`${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
 
         $(`#quest${point_array[i]['field']}-seal-level`).html(`<span class="small">Lv. </span>${input_values['sealLevel'][i]}`);
 
@@ -213,12 +214,12 @@ function point_calc(arr) {
 
         // 条件に合致する全ての組み合わせを保存するための配列
         const allResults = [{
-                                arr:[0,0,0,0],
-                                indexes: [0, 0, 0, 0],
-                                days: Infinity,
-                                cost: Infinity,
-                                variance: Infinity
-                            }];
+            arr: [0, 0, 0, 0],
+            indexes: [0, 0, 0, 0],
+            days: Infinity,
+            cost: Infinity,
+            variance: Infinity
+        }];
 
 
         for (let a = 0; a < A.length && A[a] <= trialCount; a++) {
@@ -270,9 +271,9 @@ function point_calc(arr) {
         }
 
         // bestResultに最適な組み合わせが保存される
-        console.log(`個別等級${totalPoint}`,bestResult);
+        console.log(`個別等級${totalPoint}`, bestResult);
 
-        calclated.push([bestResult['arr'],bestResult['indexes']]);
+        calclated.push([bestResult['arr'], bestResult['indexes']]);
     };
 
     for (let i = 0; i < calclated.length; i++) {
