@@ -80,19 +80,21 @@ $('#on_casual').on('change', handleFormChange);
 
 // input要素に対して、値が変更されたときのイベントを設定する
 $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
-    let value = $(this).val(); // 入力値を取得する
+    let value = ($(this).val()); // 入力値を取得する
 
     //エスケープ処理
     //value = escapeHtml(value);
     //value = escapeJs(value);
-    value = toHalf(value);
+    //value = Number(toHalf(value));
 
-    if (value >= 0 && value <= 30) { // 入力値が0以上30以下の場合
-        handleFormChange();
-    } else {
-        $(this).val('25'); // 入力値を25にする
-        handleFormChange();
+    if (value <= 0) { // 入力値が0以下の場合
+        value = 0; // 入力値を0にする
+    } else if (value >= 30) { // 入力値が30以上の場合
+        value = 30; // 入力値を30にする
     };
+
+    $(this).val(value);
+    handleFormChange();
 });
 
 // input要素に対して、値が変更されたときのイベントを設定する
@@ -102,20 +104,18 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     //エスケープ処理
     //value = escapeHtml(value);
     //value = escapeJs(value);
-    value = toHalf(value);
+    //value = Number(toHalf(value));
 
-    if (value >= 0 && value <= 9999999) { // 入力値が0以上9999999以下の場合
-        handleFormChange();
-    } else {
-        value = value.slice(0, 7); // 入力値を7桁にする
-        if (value >= 3000000) {
-            value = 3000000;
-        } else if (value < 0) {
-            value = 0;
-        };
-        $(this).val(value);
-        handleFormChange();
+    if (value <= 0) { // 入力値が0以下の場合
+        value = 0; // 入力値を0にする
+    } else if (String(value).length >= 7) { // 入力値が7桁以上の場合
+        value = String(value).slice(0, 7); // 入力値を7桁にする
     };
+    if (value > 3000000) { // 入力値が3000000以上の場合
+        value = 3000000; // 入力値を3000000にする
+    };
+    $(this).val(value);
+    handleFormChange();
 });
 
 // input要素に対して、値が変更されたときのイベントを設定する
@@ -125,14 +125,15 @@ $('input[class^="trial-count"]').on('change', function () {
     //エスケープ処理
     //value = escapeHtml(value);
     //value = escapeJs(value);
-    value = toHalf(value);
+    //value = Number(toHalf(value));
 
-    if (value >= 0 && value <= 100) { // 入力値が0以上100以下の場合
-        handleFormChange();
-    } else {
-        $(this).val('100'); // 入力値をクリアにする
-        handleFormChange();
+    if (value <= 0) { // 入力値が0以下の場合
+        value = 0; // 入力値を0にする
+    } else if (value >= 100) { // 入力値が100以上の場合
+        value = 100; // 入力値を100にする
     };
+    $(this).val(value);
+    handleFormChange();
 });
 
 // input要素に対して、値が変更されたときのイベントを設定する
@@ -348,7 +349,7 @@ function escapeJs(str) {
 };
 
 function toHalf(str) {
-    return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+    return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function (s) {
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     });
 };
