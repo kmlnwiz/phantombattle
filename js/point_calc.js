@@ -112,8 +112,8 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     } else if (String(value).length >= 7) { // 入力値が7桁以上の場合
         value = String(value).slice(0, 7); // 入力値を7桁にする
     };
-    if (value > 3000000) { // 入力値が3000000以上の場合
-        value = 3000000; // 入力値を3000000にする
+    if (value > 3_000_000) { // 入力値が3000000以上の場合
+        value = 3_000_000; // 入力値を3000000にする
     };
     $(this).val(value);
     handleFormChange();
