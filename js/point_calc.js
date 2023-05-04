@@ -205,37 +205,54 @@ function point_calc(arr) {
     for (let i = 0; i < 5; i++) {
         let minCost = Infinity;
         let result = [];
-        let priority = trialCount / 5;
+        let minDays = trialCount / 5;
         let variance = Infinity;
-        let GOAL = whole[i];
+        let totalPoint = whole[i];
 
         for (let a = 0; a < A.length && A[a] <= trialCount; a++) {
             for (let b = 0; b < B.length && A[a] + B[b] <= trialCount; b++) {
                 for (let c = 0; c < C.length && A[a] + B[b] + C[c] <= trialCount; c++) {
                     for (let d = 0; d < D.length && A[a] + B[b] + C[c] + D[d] <= trialCount; d++) {
-                        const totalCost = A[a] + B[b] + C[c] + D[d];
-                        const totalPoints = a + b + c + d;
-                        if (totalPoints >= GOAL && totalCost <= minCost) {
-                            let pri_num = 0;
-                            let arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
+                        const COST = A[a] + B[b] + C[c] + D[d];
+                        const POINT = a + b + c + d;
 
-                            pri_num = arr.reduce((acc, cur) => {
-                                return acc + Math.ceil(cur / 5);
-                            }, 0);
+                        if (POINT >= totalPoint) {
 
-                            const avg = arr.reduce((acc, val) => acc + val) / arr.length;
-                            const vary = arr.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0) / arr.length;
+                            //算出優先度設定
+                            //優先度➀　総回数最小
+                            if (COST <= minCost) {
 
-                            if (priority >= pri_num) {
-                                minCost = totalCost;
-                                result = [
-                                    arr,
-                                    [a, b, c, d],
-                                ];
-                                priority = pri_num
-                                variance = vary;
+                                const arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
+                                const DAYS = arr.reduce((acc, cur) => {
+                                    return acc + Math.ceil(cur / 5);
+                                }, 0);
+                                const AVG = arr.reduce((acc, val) => acc + val) / arr.length;
+                                const VARY = arr.reduce((acc, val) => acc + Math.pow(val - AVG, 2), 0) / arr.length;
+
+                                //優先度➁　各日数最小
+                                if (COST < minCost) {
+                                    minDays = DAYS;
+                                };
+
+                                //優先度➂　分散最小
+                                if (COST <= minCost && DAYS < minDays) {
+                                    variance = VARY;
+                                };
+
+                                //条件に合致する組み合わせを出力
+                                if (minDays >= DAYS && VARY <= variance) {
+                                    minCost = COST;
+                                    result = [
+                                        arr,
+                                        [a, b, c, d],
+                                    ];
+                                    //minDays = DAYS
+                                    //variance = VARY;
+                                };
+
                             };
                         };
+
                     };
                 };
             };
