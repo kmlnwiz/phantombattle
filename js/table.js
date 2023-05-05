@@ -50,7 +50,7 @@ $(function () {
     function generateTable(data) {
         let html = '';
         html +=
-            `<table class="table table-hover table-sm">` +
+            `<table class="table table-hover table-sm align-middle">` +
             `<thead class="">` +
             `<tr class="">`;
 
