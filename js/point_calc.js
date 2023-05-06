@@ -90,7 +90,7 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
 
     if (value <= 0) { // 入力値が0以下の場合
         value = 0; // 入力値を0にする
-    } else if (value >= 36) { // 入力値が30以上の場合
+    } else if (value >= 35) { // 入力値が30以上の場合
         value = 30; // 入力値を30にする
     };
 
