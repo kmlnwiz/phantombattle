@@ -15,9 +15,7 @@ $(function () {
             [...Array(11)].map((element, i) => {
                 return `<img class="no-save" src="image/erc_phantombattle_tokyu${("00" + i).slice(-2)}_rX9b3S.png" style="height:1.75em;">`;
             }).reverse(),
-            [...single].map(element => {
-                return element.toLocaleString();
-            }).reverse()
+            [...single].map(element => element.toLocaleString()).reverse()
         ],
         'thead': ['個別等級', '必要ポイント'],
     };
@@ -27,9 +25,7 @@ $(function () {
                 length: 31
             }, (_, i) => 30 - i),
             '',
-            [...level].map(element => {
-                return element.toLocaleString();
-            }).reverse(),
+            [...level].map(element => element.toLocaleString()).reverse(),
             '',
         ],
         'thead': ['刻印Lv.', '獲得Pt', '刻印Lv.クリアPt', '刻印Lv.ボーナス（SS）'],
@@ -38,8 +34,8 @@ $(function () {
         return bonus[Math.floor(element / 5)].toLocaleString();
     });
     LEVEL['data'][1] = LEVEL['data'][2].map((element, i) => {
-        const level = Number(LEVEL['data'][2][i].replace(',',''));
-        const bonus = Number(LEVEL['data'][3][i].replace(',',''));
+        const level = Number(LEVEL['data'][2][i].replace(',', ''));
+        const bonus = Number(LEVEL['data'][3][i].replace(',', ''));
         return (level + bonus * 3).toLocaleString();
     });
 
