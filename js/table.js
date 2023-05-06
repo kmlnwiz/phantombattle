@@ -22,8 +22,8 @@ $(function () {
 
     const LEVEL = {
         'data': [Array.from({
-                length: 31
-            }, (_, i) => 30 - i),
+                length: 35
+            }, (_, i) => 34 - i),
             '',
             [...level].map(element => element.toLocaleString()).reverse(),
             '',
@@ -50,7 +50,7 @@ $(function () {
     }
 
 
-    console.log(SOUGOU, SINGLE, LEVEL)
+    console.log(SOUGOU, SINGLE, LEVEL,BONUS)
 
 
     function generateTable(data) {
