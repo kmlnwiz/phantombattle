@@ -22,37 +22,51 @@
 
         <span class="d-inline-block w-100 h1 text-center border-bottom my-3">幻闘戦　ポイント計算</span>
 
-        <!--<div id="option" class="col col-lg-6 p-3 mb-3 border">
-                <span class="d-inline-block h3 mb-3">目標設定</span>
-
-                <form onsubmit="return false;">
-                    <div class="mb-2">
-                        <select class="form-select form-select-sm" id="select-goal" aria-label="Floating label select">
-                            <option value="6">SS</option>
-                            <label class="small" for="select-goal">目標総合等級</label>
-                            <option value="5" selected>S（EX-AS進化素材）</option>
-                            <option value="4">A（精霊）</option>
-                            <option value="3">B（マイページ用精霊）</option>
-                            <option value="2">C（精霊）</option>
-                            <option value="1">D</option>
-                            <option value="0">E</option>
-                        </select>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="on_casual">
-                        <label class="form-check-label" for="on_casual">
-                            カジュアルモード（獲得ポイント3倍、総合等級A上限）
-                        </label>
-                    </div>
-                </form>
-
-            </div>-->
         <div class="row g-0 mb-3">
             <div id="option" class="col-12 col-lg-6 p-3 border">
-                <div class="mb-2">
-                    <label class="" for="trial-count">残り挑戦回数<span class="small text-muted ms-2">（残り日数 × 5）</span></label>
-                    <input type="number" class="trial-count form-control" id="trial-count" placeholder="" min="0" max="100" step="5" value="100" maxlength="3">
+
+                <div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="trialCountRadio" id="trialCountRadio1" value="1">
+                        <label class="form-check-label" for="trialCountRadio1">
+                            日付を選択する
+                        </label>
+                    </div>
+                    <div class="row mb-3" id="trialCountRadioInput1">
+                        <div class="col-12 col-sm-6 mb-2">
+                            <label class="" for="trial-count-date1">起点日</label>
+                            <input id="trial-count-date1" type="date" class="form-control" placeholder="起点日" disabled>
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            <label class="" for="trial-count-date2">終了日</label>
+                            <input id="trial-count-date2" type="date" class="form-control" placeholder="終了日" disabled>
+                        </div>
+                        <div class="col-12">
+                            <input class="form-check-input" type="checkbox" value="" id="on_today" checked>
+                            <label class="form-check-label" for="on_today">
+                                起点日の回数を含める
+                            </label>
+                        </div>
+                    </div>
                 </div>
+
+                <hr class="">
+
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="trialCountRadio" id="trialCountRadio2" value="2" checked>
+                        <label class="form-check-label" for="trialCountRadio2">
+                            手動で入力する
+                        </label>
+                    </div>
+                    <div class="mb-2" id="trialCountRadioInput2">
+                        <label class="" for="trial-count">残り挑戦回数</label>
+                        <input type="number" class="trial-count form-control" id="trial-count" placeholder="" min="0" max="100" step="5" value="100" maxlength="3">
+                    </div>
+                </div>
+
+                <hr class="">
+
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="on_casual">
                     <label class="form-check-label" for="on_casual">
@@ -1077,6 +1091,13 @@
             $(`#seal-level${parentId}`).val(text);
             handleFormChange();
         });
+
+        const today = new Date();
+        const formattedDate1 = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+        const thursday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + (4 - today.getDay() + 7) % 7);
+        const formattedDate2 = thursday.getFullYear() + '-' + ('0' + (thursday.getMonth() + 1)).slice(-2) + '-' + ('0' + thursday.getDate()).slice(-2);
+        $("#trial-count-date1").val(formattedDate1);
+        $("#trial-count-date2").val(formattedDate2);
     </script>
     <script>
         //画像生成
