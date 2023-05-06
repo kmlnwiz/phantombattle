@@ -39,6 +39,16 @@ $(function () {
         return (level + bonus * 3).toLocaleString();
     });
 
+    const BONUS = {
+        'data': [
+            [...Array(7)].map((_, i) => `${i * 5} ～ ${(i + 1) * 5 - 1}`).reverse(),
+            [...bonus_border['avg']].map(element => element[0].toFixed(1) + ' 秒').reverse(),
+            [...bonus_border['turn']].map(element => element[0] + ' ターン').reverse(),
+            [...bonus_border['correct']].map(element => element[0] + ' %').reverse(),
+        ],
+        'thead': ['刻印Lv.', '平均解答時間', 'クリアターン', 'クイズ正解率'],
+    }
+
 
     console.log(SOUGOU, SINGLE, LEVEL)
 
@@ -80,4 +90,5 @@ $(function () {
     $('#acc-item1').html(generateTable(SOUGOU));
     $('#acc-item2').html(generateTable(SINGLE));
     $('#acc-item3').html(generateTable(LEVEL));
+    $('#acc-item4').html(generateTable(BONUS));
 });

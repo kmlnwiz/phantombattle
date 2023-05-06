@@ -54,15 +54,15 @@ function handleFormChange() {
 
         $(`#quest${point_array[i]['field']}-avg-rank`).html(`<img class="no-save mb-0" src="image/grade_${input_values['avgTime'][i]}_mkjhbji.png" style="height:1.75em;">`);
 
-        //$(`#quest${point_array[i]['field']}-avg-rank-border`).html(`${(bonus_border[i][Math.floor(input_values['sealLevel'][i]/5)]).toFixed(1)}秒以内でSS`);
+        //$(`#quest${point_array[i]['field']}-avg-rank-border`).html(`${(bonus_border['avg'][Math.floor(input_values['sealLevel'][i]/5)]).toFixed(1)}秒以内でSS`);
 
         $(`#quest${point_array[i]['field']}-turn-rank`).html(`<img class="no-save mb-0" src="image/grade_${input_values['clearTurn'][i]}_mkjhbji.png" style="height:1.75em;">`);
 
-        //$(`#quest${point_array[i]['field']}-turn-rank-border`).html(`${(bonus_border[1][Math.floor(input_values['sealLevel'][i]/5)])}ﾀｰﾝ以内でSS`);
+        //$(`#quest${point_array[i]['field']}-turn-rank-border`).html(`${(bonus_border['turn'][Math.floor(input_values['sealLevel'][i]/5)])}ﾀｰﾝ以内でSS`);
 
         $(`#quest${point_array[i]['field']}-correct-rank`).html(`<img class="no-save mb-0" src="image/grade_${input_values['correctRate'][i]}_mkjhbji.png" style="height:1.75em;">`);
 
-        //$(`#quest${point_array[i]['field']}-correct-rank-border`).html(`${(bonus_border[2][Math.floor(input_values['sealLevel'][i]/5)])}%以上でSS`);
+        //$(`#quest${point_array[i]['field']}-correct-rank-border`).html(`${(bonus_border['correct'][Math.floor(input_values['sealLevel'][i]/5)])}%以上でSS`);
     };
 
     const date = new Date();
@@ -90,7 +90,7 @@ $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
 
     if (value <= 0) { // 入力値が0以下の場合
         value = 0; // 入力値を0にする
-    } else if (value >= 30) { // 入力値が30以上の場合
+    } else if (value >= 36) { // 入力値が30以上の場合
         value = 30; // 入力値を30にする
     };
 
