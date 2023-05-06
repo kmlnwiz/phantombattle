@@ -79,6 +79,24 @@ handleFormChange();
 $('[id^="quest"] select').on('change', handleFormChange);
 $('#on_casual').on('change', handleFormChange);
 
+$('[id^="trialCountRadioInput"] input').on('change', handleFormChange);
+
+
+$('input[id^="trialCountRadio"]').on('change', function () {
+    const value = $(this).val();
+    //console.log(value)
+
+    if (value == 1) {
+        $('#trialCountRadioInput1 input').prop('disabled', false);
+        $('#trialCountRadioInput2 input').prop('disabled', true);
+
+    } else if (value == 2) {
+        $('#trialCountRadioInput1 input').prop('disabled', true);
+        $('#trialCountRadioInput2 input').prop('disabled', false);
+    };
+    handleFormChange();
+})
+
 // input要素に対して、値が変更されたときのイベントを設定する
 $('[id^="quest"] input[class^="seal-level"]').on('change', function () {
     let value = ($(this).val()); // 入力値を取得する
@@ -112,8 +130,8 @@ $('[id^="quest"] input[class^="current-point"]').on('change', function () {
     } else if (String(value).length >= 7) { // 入力値が7桁以上の場合
         value = String(value).slice(0, 7); // 入力値を7桁にする
     };
-    if (value > 3_000_000) { // 入力値が3000000以上の場合
-        value = 3_000_000; // 入力値を3000000にする
+    if (value > 3000000) { // 入力値が3000000以上の場合
+        value = 3000000; // 入力値を3000000にする
     };
     $(this).val(value);
     handleFormChange();
@@ -170,7 +188,27 @@ function bonus_calc(i, rank, seal) {
 function point_calc(arr) {
 
     const calclated = [];
-    const trialCount = escapeJs(escapeHtml($('#trial-count').val()));
+
+    function dateCount(date1, date2) {
+        function dateDiff(date1, date2) {
+            const diffInMs = Math.abs(new Date(date2) - new Date(date1));
+            const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+            return diffInDays;
+        };
+        let date = dateDiff(date1, date2);
+        if (!$('#on_today').prop('checked')) {
+            date = date - 1;
+        };
+
+        return date * 5;
+    };
+    const trialRadio1 = dateCount($('#trial-count-date1').val(), $('#trial-count-date2').val()) || 100;
+    const trialRadio2 = Number(escapeJs(escapeHtml($('#trial-count').val()))) || 100;
+    //console.log(trialRadio1, trialRadio2);
+
+    const trialCount = $('#trialCountRadio1').prop('checked') ? trialRadio1 : trialRadio2;
+    //console.log(trialCount);
+
 
     const point = [
         Number(arr[0]['getPoint']),
@@ -195,7 +233,7 @@ function point_calc(arr) {
             return Math.ceil((element - currentPoint[i] >= 0 ? element - currentPoint[i] : 0) / point[i]);
         }));
     };
-    console.log(SG);
+    //console.log(SG);
 
 
     const A = SG[0];
