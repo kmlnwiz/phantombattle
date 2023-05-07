@@ -13,7 +13,7 @@ bonus = [
 ];
 
 bonus_rate = [
-    1.0, 0.8, 0.6, 0.4, 0.2,
+    0.2, 0.4, 0.6, 0.8, 1.0
 ];
 
 single = [
@@ -60,37 +60,37 @@ trial = [
     15, 20, 15, 50
 ];
 
-sougou_image = [
-    "erc_phantombattle_rank00_rX9b3S",
-    "erc_phantombattle_rank01_rX9b3S",
-    "erc_phantombattle_rank02_rX9b3S",
-    "erc_phantombattle_rank03_rX9b3S",
-    "erc_phantombattle_rank04_rX9b3S",
-    "erc_phantombattle_rank05_rX9b3S",
-    "erc_phantombattle_rank06_rX9b3S",
-    "erc_phantombattle_rank07_rX9b3S",
-];
-
-kobetsu_image = [
-    "erc_phantombattle_tokyu00_rX9b3S",
-    "erc_phantombattle_tokyu01_rX9b3S",
-    "erc_phantombattle_tokyu02_rX9b3S",
-    "erc_phantombattle_tokyu03_rX9b3S",
-    "erc_phantombattle_tokyu04_rX9b3S",
-    "erc_phantombattle_tokyu05_rX9b3S",
-    "erc_phantombattle_tokyu06_rX9b3S",
-    "erc_phantombattle_tokyu07_rX9b3S",
-    "erc_phantombattle_tokyu08_rX9b3S",
-    "erc_phantombattle_tokyu09_rX9b3S",
-    "erc_phantombattle_tokyu10_rX9b3S",
-];
-
 rank_image = [
-    "grade_C_mkjhbji",
-    "grade_B_mkjhbji",
-    "grade_A_mkjhbji",
-    "grade_S_mkjhbji",
-    "grade_SS_mkjhbji",
+    "rank00",
+    "rank01",
+    "rank02",
+    "rank03",
+    "rank04",
+    "rank05",
+    "rank06",
+    "rank07",
+];
+
+tokyu_image = [
+    "tokyu00",
+    "tokyu01",
+    "tokyu02",
+    "tokyu03",
+    "tokyu04",
+    "tokyu05",
+    "tokyu06",
+    "tokyu07",
+    "tokyu08",
+    "tokyu09",
+    "tokyu10",
+];
+
+grade_image = [
+    "grade_C",
+    "grade_B",
+    "grade_A",
+    "grade_S",
+    "grade_SS",
 ];
 
 sougou_tokyu = [

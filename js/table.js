@@ -3,7 +3,7 @@ $(function () {
     const SOUGOU = {
         'data': [
             [...Array(8)].map((element, i) => {
-                return `<img class="no-save" src="image/erc_phantombattle_rank${("00" + i).slice(-2)}_rX9b3S.png" style="height:1.75em;">`;
+                return `<img class="no-save" src="image/${rank_image[i]}.png" style="height:1.75em;">`;
             }).reverse(),
             whole
         ],
@@ -13,7 +13,7 @@ $(function () {
     const SINGLE = {
         'data': [
             [...Array(11)].map((element, i) => {
-                return `<img class="no-save" src="image/erc_phantombattle_tokyu${("00" + i).slice(-2)}_rX9b3S.png" style="height:1.75em;">`;
+                return `<img class="no-save" src="image/${tokyu_image[i]}.png" style="height:1.75em;">`;
             }).reverse(),
             [...single].map(element => element.toLocaleString()).reverse()
         ],
@@ -28,10 +28,10 @@ $(function () {
             [...level].map(element => element.toLocaleString()).reverse(),
             '',
         ],
-        'thead': ['刻印Lv.', '獲得Pt', '刻印Lv.クリアPt', '刻印Lv.ボーナス（SS）'],
+        'thead': ['刻印Lv.', '最大獲得Pt', '刻印Lv.クリアPt', '刻印レベルボーナス（SS）'],
     };
     LEVEL['data'][3] = LEVEL['data'][0].map(element => {
-        return bonus[Math.floor(element / 5)].toLocaleString();
+        return Math.floor(bonus[Math.floor(element / 5)] * bonus_rate[4]).toLocaleString();
     });
     LEVEL['data'][1] = LEVEL['data'][2].map((element, i) => {
         const level = Number(LEVEL['data'][2][i].replace(',', ''));
@@ -41,7 +41,7 @@ $(function () {
 
     const BONUS = {
         'data': [
-            [...Array(7)].map((_, i) => `${i * 5}～${(i + 1) * 5 - 1}`).reverse(),
+            [...Array(7)].map((_, i) => `Lv.${i * 5} ～`).reverse(),
             [...bonus_border['avg']].map(element => element[0].toFixed(1) + ' 秒').reverse(),
             [...bonus_border['turn']].map(element => element[0] + ' ターン').reverse(),
             [...bonus_border['correct']].map(element => element[0] + ' %').reverse(),
@@ -50,13 +50,13 @@ $(function () {
     }
 
 
-    console.log(SOUGOU, SINGLE, LEVEL,BONUS)
+    console.log(SOUGOU, SINGLE, LEVEL, BONUS);
 
 
-    function generateTable(data) {
+    function generateTable(data, fs = 1) {
         let html = '';
         html +=
-            `<table class="table table-hover table-sm align-middle">` +
+            `<table class="table table-hover table-sm align-middle" style="font-size:${fs}em;">` +
             `<thead class="">` +
             `<tr class="">`;
 
@@ -89,6 +89,6 @@ $(function () {
 
     $('#acc-item1').html(generateTable(SOUGOU));
     $('#acc-item2').html(generateTable(SINGLE));
-    $('#acc-item3').html(generateTable(LEVEL));
-    $('#acc-item4').html(generateTable(BONUS));
+    $('#acc-item3').html(generateTable(LEVEL, 0.9));
+    $('#acc-item4').html(generateTable(BONUS, 0.9));
 });
