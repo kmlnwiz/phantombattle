@@ -49,8 +49,23 @@ $(function () {
         'thead': ['刻印Lv.', '平均解答時間', 'クリアターン', 'クイズ正解率'],
     }
 
+    const SCHEDULE = {
+        'data': [
+            [...Array(20)].map((_, i) => `${i + 1}日目`),
+            [...Array(20)].map((_, i) => (i + 1) * 5).reverse(),
+            [...Array(20)].map((_, i) => {
+                let str = '';
+                str += `<span class="me-2 fw-bold">A</span>`;
+                str += (i + 1) * 5 > trial[0] ? `<span class="me-2 fw-bold">B</span>` : `<span class="me-2 fw-bold opacity-25">B</span>`;
+                str += (i + 1) * 5 > trial[0] + trial[1] ? `<span class="me-2 fw-bold">C</span>` : `<span class="me-2 fw-bold opacity-25">C</span>`;
+                str += (i + 1) * 5 > trial[0] + trial[1] + trial[2] ? `<span class="me-2 fw-bold">D</span>` : `<span class="me-2 fw-bold opacity-25">D</span>`;
+                return str;
+            }),
+        ],
+        'thead': ['日程', '残り挑戦回数', '挑戦可能クエスト'],
+    };
 
-    console.log(SOUGOU, SINGLE, LEVEL, BONUS);
+    console.log(SOUGOU, SINGLE, LEVEL, BONUS, SCHEDULE);
 
 
     function generateTable(data, fs = 1) {
@@ -91,4 +106,5 @@ $(function () {
     $('#acc-item2').html(generateTable(SINGLE));
     $('#acc-item3').html(generateTable(LEVEL, 0.9));
     $('#acc-item4').html(generateTable(BONUS, 0.9));
+    $('#acc-item5').html(generateTable(SCHEDULE));
 });
