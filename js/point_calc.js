@@ -191,7 +191,7 @@ function point_calc(arr) {
 
     function dateCount(date1, date2) {
         function dateDiff(date1, date2) {
-            const diffInMs = Math.abs(new Date(date2) - new Date(date1));
+            const diffInMs = new Date(date2) - new Date(date1);
             const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
             return diffInDays;
         };
@@ -199,12 +199,17 @@ function point_calc(arr) {
         if (!$('#on_today').prop('checked')) {
             date = date - 1;
         };
+        if (date < 0) {
+            date = 0;
+        } else if (date > 20) {
+            date = 20;
+        };
 
         return date * 5;
     };
-    const trialRadio1 = dateCount($('#trial-count-date1').val(), $('#trial-count-date2').val()) || 100;
-    const trialRadio2 = Number(escapeJs(escapeHtml($('#trial-count').val()))) || 100;
-    //console.log(trialRadio1, trialRadio2);
+    const trialRadio1 = dateCount($('#trial-count-date1').val(), $('#trial-count-date2').val());
+    const trialRadio2 = Number(escapeJs(escapeHtml($('#trial-count').val())));
+    console.log(trialRadio1, trialRadio2);
 
     const trialCount = $('#trialCountRadio1').prop('checked') ? trialRadio1 : trialRadio2;
     //console.log(trialCount);
