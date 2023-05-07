@@ -41,18 +41,19 @@
                             <label class="" for="trial-count-date2">終了日</label>
                             <input id="trial-count-date2" type="date" class="form-control" placeholder="終了日" disabled>
                         </div>
-                        <div class="col-12">
-                            <input class="form-check-input" type="checkbox" value="" id="on_today" checked>
+                        <div class="col-12 mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="on_today" checked disabled>
                             <label class="form-check-label" for="on_today">
                                 起点日の回数を含める
                             </label>
                         </div>
+                        <span class="d-inline-block">残り挑戦回数：<span class="fs-5" id="trial-count-fromdate">100<span class="small"> / 100</span></span></span>
                     </div>
                     <hr class="m-0" style="border-style: dashed;">
                 </div>
 
                 <div class="mb-3 border border-top-0 p-3 rounded rounded-top-0">
-                    <div class="form-check">
+                    <div class="form-check mb-2">
                         <input class="form-check-input" type="radio" name="trialCountRadio" id="trialCountRadio2" value="2" checked>
                         <label class="form-check-label" for="trialCountRadio2">
                             手動で入力する
@@ -1098,6 +1099,9 @@
         const formattedDate2 = thursday.getFullYear() + '-' + ('0' + (thursday.getMonth() + 1)).slice(-2) + '-' + ('0' + thursday.getDate()).slice(-2);
         $("#trial-count-date1").val(formattedDate1);
         $("#trial-count-date2").val(formattedDate2);
+
+        const diff_initial = Math.ceil((thursday - today) / (1000 * 60 * 60 * 24));
+        $('#trial-count-fromdate').html(`${diff_initial * 5}<span class="small"> / 100</span>`);
     </script>
     <script>
         //画像生成
