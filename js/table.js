@@ -106,5 +106,5 @@ $(function () {
     $('#acc-item2').html(generateTable(SINGLE));
     $('#acc-item3').html(generateTable(LEVEL, 0.9));
     $('#acc-item4').html(generateTable(BONUS, 0.9));
-    $('#acc-item5').html(generateTable(SCHEDULE));
+    //$('#acc-item5').html(generateTable(SCHEDULE));
 });
