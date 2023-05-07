@@ -377,7 +377,7 @@ function point_calc(arr) {
             return acc + cur;
         }, 0) > 0 ? `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
             return acc + cur;
-        }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>` : `<span class="d-inline-block small mx-1 text-danger">達成不可</span>`);
+        }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>` : `<span class="d-inline-block small mx-1 text-danger fw-bold">達成不可</span>`);
 
     };
 };
