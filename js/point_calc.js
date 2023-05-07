@@ -194,6 +194,7 @@ function point_calc(arr) {
     };
     const trialRadio1 = dateCount($('#trial-count-date1').val(), $('#trial-count-date2').val());
     const trialRadio2 = Number(escapeJs(escapeHtml($('#trial-count').val())));
+    $('#trial-count-fromdate').html(`${trialRadio1}<span class="small"> / 100</span>`);
     //console.log(trialRadio1, trialRadio2);
 
     const trialCount = $('#trialCountRadio1').prop('checked') ? trialRadio1 : trialRadio2;
