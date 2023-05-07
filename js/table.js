@@ -41,7 +41,7 @@ $(function () {
 
     const BONUS = {
         'data': [
-            [...Array(7)].map((_, i) => `Lv.${i * 5} ～`).reverse(),
+            [...Array(7)].map((_, i) => `${i * 5} ～`).reverse(),
             [...bonus_border['avg']].map(element => element[0].toFixed(1) + ' 秒').reverse(),
             [...bonus_border['turn']].map(element => element[0] + ' ターン').reverse(),
             [...bonus_border['correct']].map(element => element[0] + ' %').reverse(),
