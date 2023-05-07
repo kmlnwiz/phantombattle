@@ -55,10 +55,10 @@ $(function () {
             [...Array(20)].map((_, i) => (i + 1) * 5).reverse(),
             [...Array(20)].map((_, i) => {
                 let str = '';
-                str += `<span class="me-2 fw-bold">A</span>`;
-                str += (i + 1) * 5 > trial[0] ? `<span class="me-2 fw-bold">B</span>` : `<span class="me-2 fw-bold opacity-25">B</span>`;
-                str += (i + 1) * 5 > trial[0] + trial[1] ? `<span class="me-2 fw-bold">C</span>` : `<span class="me-2 fw-bold opacity-25">C</span>`;
-                str += (i + 1) * 5 > trial[0] + trial[1] + trial[2] ? `<span class="me-2 fw-bold">D</span>` : `<span class="me-2 fw-bold opacity-25">D</span>`;
+                str += (i * 5 + trial[0]) >= 100 ? `<span class="me-2 fw-bold">A</span>` : `<span class="me-2 fw-bold opacity-25">A</span>`;
+                str += (i * 5 + trial[1]) >= 100 ? `<span class="me-2 fw-bold">B</span>` : `<span class="me-2 fw-bold opacity-25">B</span>`;
+                str += (i * 5 + trial[2]) >= 100 ? `<span class="me-2 fw-bold">C</span>` : `<span class="me-2 fw-bold opacity-25">C</span>`;
+                str += (i * 5 + trial[3]) >= 100 ? `<span class="me-2 fw-bold">D</span>` : `<span class="me-2 fw-bold opacity-25">D</span>`;
                 return str;
             }),
         ],

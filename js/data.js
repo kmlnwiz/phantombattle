@@ -56,9 +56,11 @@ bonus_border = {
     ],
 };
 
+//クエスト解放日程（初項0）
 trial = [
-    15, 20, 15, 50
+    0, 3, 7, 10
 ];
+trial = trial.map((element, i) => (20 - element) * 5);
 
 rank_image = [
     "rank00",

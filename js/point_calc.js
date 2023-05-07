@@ -201,12 +201,7 @@ function point_calc(arr) {
     //console.log(trialCount);
 
     //クエスト挑戦回数の上限
-    const limit = [
-        trial[0] + trial[1] + trial[2] + trial[3],
-        trial[1] + trial[2] + trial[3],
-        trial[2] + trial[3],
-        trial[3]
-    ];
+    const limit = trial;
 
     //獲得ポイント
     const point = [
