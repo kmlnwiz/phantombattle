@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <hr class="d-lg-none my-3" >
+            <hr class="d-lg-none my-3">
 
             <div id="option" class="col-12 col-lg-6 p-3 border">
 
@@ -1119,23 +1119,22 @@
         //画像生成
         document.createImg = () => {
             //window.scrollTo(0, 0);
-            setTimeout(function () {
-                const content = document.querySelector('#image-source');
-                const canvasElement = document.querySelector('#canvas-output');
 
-                html2canvas(content, {
-                    windowWidth: 1600,
-                    windowHeight: 900,
-                    scrollX: 0,
-                    scrollY: window.scrollY,
-                    backgroundColor: window.getComputedStyle(document.body).backgroundColor,
-                    allowTaint: true,
-                    proxy: true,
-                    useCORS: true,
-                }).then(canvas => {
-                    canvasElement.src = canvas.toDataURL();
-                });
-            }, 200)
+            const content = document.querySelector('#image-source');
+            const canvasElement = document.querySelector('#canvas-output');
+
+            html2canvas(content, {
+                windowWidth: 1600,
+                windowHeight: 900,
+                scrollX: 0,
+                scrollY: window.scrollY,
+                backgroundColor: window.getComputedStyle(document.body).backgroundColor,
+                allowTaint: true,
+                proxy: true,
+                useCORS: true,
+            }).then(canvas => {
+                canvasElement.src = canvas.toDataURL();
+            });
         };
     </script>
     <script>
