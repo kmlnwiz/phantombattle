@@ -18,9 +18,15 @@
     <script src="https://code.jquery.com/jquery-3.6.4.slim.js" integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid bg-body">
 
-        <span class="d-inline-block w-100 h1 text-center border-bottom my-3">幻闘戦　ポイント計算</span>
+    <nav class="navbar bg-body-tertiary border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold">幻闘戦　ポイント計算</a>
+            <button type="button" class="btn btn-outline-light border px-3"><a href="https://github.com/kmlnwiz/phantombattle/blob/main/README.md"><i class="bi bi-github me-2"></i>README</a></button>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-body p-3">
 
         <div class="row g-0 mb-3">
             <div class="col-12 col-lg-6 p-3 border">
@@ -1024,7 +1030,7 @@
 
         <!-- Button trigger modal -->
         <div class="position-sticky bottom-0 bg-body py-3 border-top" style="z-index:2;">
-            <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="createImg()">
+            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="createImg()">
                 画像化する
             </button>
         </div>
