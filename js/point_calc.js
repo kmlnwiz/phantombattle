@@ -70,7 +70,7 @@ function handleFormChange() {
     $('#generate-date').html(`generated ${date.getFullYear()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${('00' + (date.getDate())).slice(-2)}`);
 
 
-    $('#which-mode').html($('#on_casual').prop('checked') ? '<span class="col d-inline-block text-bg-success text-center py-1">カジュアルモード</span>' : '<span class="col d-inline-block text-bg-danger text-center py-1">チャレンジモード</span>');
+    $('#which-mode').html($('#on_casual').prop('checked') ? '<span class="col d-inline-block text-bg-success text-center fw-bold py-1">カジュアルモード</span>' : '<span class="col d-inline-block text-bg-danger text-center fw-bold py-1">チャレンジモード</span>');
     point_calc(point_array);
 };
 
