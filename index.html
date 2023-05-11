@@ -1123,7 +1123,7 @@
         $('#trial-count-fromdate').html(`${diff_initial * 5}<span class="small"> / 100</span>`);
     </script>
     <script>
-        imgData = '';
+        let imgData = '';
         //画像生成
         document.createImg = () => {
             //window.scrollTo(0, 0);
@@ -1145,8 +1145,7 @@
                 imgData = canvas;
             });
         };
-    </script>
-    <script>
+
         function shareData() {
             // canvas要素からBlobオブジェクトを作成
             imageData.toBlob(function (blob) {
