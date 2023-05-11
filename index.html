@@ -1123,6 +1123,7 @@
         $('#trial-count-fromdate').html(`${diff_initial * 5}<span class="small"> / 100</span>`);
     </script>
     <script>
+        imgData = '';
         //画像生成
         document.createImg = () => {
             //window.scrollTo(0, 0);
@@ -1141,21 +1142,14 @@
                 useCORS: true,
             }).then(canvas => {
                 canvasElement.src = canvas.toDataURL();
+                imgData = canvas;
             });
         };
     </script>
     <script>
         function shareData() {
-            const image = document.getElementById('canvas-output');
-            const canvas = document.createElement('canvas');
-            canvas.width = image.width;
-            canvas.height = image.height;
-
-            const context = canvas.getContext('2d');
-            context.drawImage(image, 0, 0, image.width, image.height);
-
             // canvas要素からBlobオブジェクトを作成
-            canvas.toBlob(function (blob) {
+            imageData.toBlob(function (blob) {
                 // 共有するデータを含むオブジェクトを作成
                 const shareData = {
                     title: '幻闘戦　ポイント計算\n#幻闘戦',
