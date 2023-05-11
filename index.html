@@ -1148,8 +1148,8 @@
         function shareData() {
             const image = document.getElementById('canvas-output');
             const canvas = document.createElement('canvas');
-            canvas.width = 1600;
-            canvas.height = 900;
+            canvas.width = image.width;
+            canvas.height = image.height;
 
             const context = canvas.getContext('2d');
             context.drawImage(image, 0, 0, image.width, image.height);
@@ -1158,7 +1158,7 @@
             canvas.toBlob(function (blob) {
                 // 共有するデータを含むオブジェクトを作成
                 const shareData = {
-                    title: '幻闘戦　ポイント計算 #幻闘戦',
+                    title: '幻闘戦　ポイント計算\n#幻闘戦',
                     text: '',
                     files: [
                         new File([blob], 'image.png', {
