@@ -442,7 +442,7 @@
             <hr class="my-3">
             <div id="image-source">
                 <div id="which-mode" class="w-100 h4 row g-0 my-0">
-                    <span class="col d-inline-block text-bg-danger text-center py-2">チャレンジモード</span>
+                    <span class="col d-inline-block text-bg-danger text-center fw-bold py-1">チャレンジモード</span>
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-4 g-0">
@@ -1030,7 +1030,7 @@
 
         <!-- Button trigger modal -->
         <div class="position-sticky bottom-0 bg-body py-3 border-top" style="z-index:2;">
-            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="createImg()">
+            <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="createImg()">
                 画像化する
             </button>
         </div>
@@ -1069,6 +1069,7 @@
                     <img id="canvas-output" class="border border-2 img-fluid my-1">
                 </div>
                 <div class="modal-footer p-2">
+                    <button type="button" class="btn btn-success" onclick="shareData()"><i class="bi bi-share-fill me-2"></i>共有</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -1141,6 +1142,36 @@
             }).then(canvas => {
                 canvasElement.src = canvas.toDataURL();
             });
+        };
+    </script>
+    <script>
+        function shareData() {
+            const image = document.getElementById('canvas-output');
+            const canvas = document.createElement('canvas');
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            const context = canvas.getContext('2d');
+            context.drawImage(image, 0, 0, image.width, image.height);
+
+            // canvas要素からBlobオブジェクトを作成
+            canvas.toBlob(function (blob) {
+                // 共有するデータを含むオブジェクトを作成
+                const shareData = {
+                    title: '幻闘戦　ポイント計算 #幻闘戦',
+                    text: '',
+                    files: [
+                        new File([blob], 'image.png', {
+                            type: 'image/png'
+                        })
+                    ]
+                };
+
+                // 共有ダイアログを開く
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch((error) => console.error('Error sharing', error));
+            }, 'image/png');
         };
     </script>
     <script>
