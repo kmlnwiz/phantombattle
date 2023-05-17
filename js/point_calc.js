@@ -335,8 +335,9 @@ function point_calc(arr) {
         let progress = [];
         for (let j = 0; j < 4; j++) {
             const percentage = calclated[i][1][j] / 40 * 100;
-            const gradientColor = j === 0 ? "rgba(254,169,223,0)" : j === 1 ? "rgba(89,206,230,0)" : j === 2 ? "rgba(253,235,72,0)" : "rgba(144,74,216,0)";
-            const progressHTML = `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][j]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${percentage}%"><div class="progress-bar" style="background: linear-gradient(to bottom, ${gradientColor} 0%,${gradientColor} 40%);"></div></div>`;
+            const gradientColorOpacity = j === 0 ? "rgba(254,169,223,0)" : j === 1 ? "rgba(89,206,230,0)" : j === 2 ? "rgba(253,235,72,0)" : "rgba(144,74,216,0)";
+            const gradientColor = j === 0 ? "rgba(254,169,223,1)" : j === 1 ? "rgba(89,206,230,1)" : j === 2 ? "rgba(253,235,72,1)" : "rgba(144,74,216,1)";
+            const progressHTML = `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][j]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${percentage}%"><div class="progress-bar" style="background: linear-gradient(to bottom, ${gradientColorOpacity} 0%,${gradientColor} 40%);"></div></div>`;
             progress.push(progressHTML);
         };
 
