@@ -331,54 +331,49 @@ function point_calc(arr) {
 
     //プログレスバー
     for (let i = 0; i < calclated.length; i++) {
-        let progress = [
-            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][0]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][0] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(254,169,223,0) 0%,rgba(254,169,223,100) 40%);"></div></div>`,
-            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][1]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][1] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(89,206,230,0) 0%,rgba(89,206,230,100) 40%)"></div></div>`,
-            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][2]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][2] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(253,235,72,0) 0%,rgba(253,235,72,100) 40%);"></div></div>`,
-            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][3]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${calclated[i][1][3] / 40 * 100}%"><div class="progress-bar" style="background: linear-gradient(to bottom, rgba(144,74,216,0) 0%,rgba(144,74,216,100) 40%);"></div></div>`,
-            `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${40 - calclated[i][1].reduce((acc, cur) => {
-            return acc + cur;
-        }, 0)}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${(40 - calclated[i][1].reduce((acc, cur) => {
-            return acc + cur;
-        }, 0)) / 40 * 100}%"><div class="progress-bar" style="background-color:transparent;"></div></div>`,
-        ];
+
+        let progress = [];
+        for (let j = 0; j < 4; j++) {
+            const percentage = calclated[i][1][j] / 40 * 100;
+            const gradientColor = j === 0 ? "rgba(254,169,223,0)" : j === 1 ? "rgba(89,206,230,0)" : j === 2 ? "rgba(253,235,72,0)" : "rgba(144,74,216,0)";
+            const progressHTML = `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${calclated[i][1][j]}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${percentage}%"><div class="progress-bar" style="background: linear-gradient(to bottom, ${gradientColor} 0%,${gradientColor} 40%);"></div></div>`;
+            progress.push(progressHTML);
+        };
+
+        const remainingPercentage = (40 - calclated[i][1].reduce((acc, cur) => acc + cur, 0)) / 40 * 100;
+        const remainingProgress = `<div class="progress rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="${40 - calclated[i][1].reduce((acc, cur) => acc + cur, 0)}" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: ${remainingPercentage}%"><div class="progress-bar" style="background-color:transparent;"></div></div>`;
+        progress.push(remainingProgress);
+
         $(`#${sougou_tokyu[i]}-progress`).html(progress.join('\n'));
+
 
         let progress_scale = [];
         for (let j = 0; j < 40; j++) {
-            if (j == 0) {
-                progress_scale.push(`<div class="progress border border-top-0 border-bottom-0 border-start-0 rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%; border-width: 0.75px!important;"><div class="progress-bar bg-transparent" style=""></div></div>`);
-            } else if (j == 39) {
-                progress_scale.push(`<div class="progress border border-top-0 border-bottom-0 border-end-0 rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%; border-width: 0.75px!important;"><div class="progress-bar bg-transparent" style=""></div></div>`);
-            } else {
-                progress_scale.push(`<div class="progress border border-top-0 border-bottom-0 rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%; border-width: 0.75px!important;"><div class="progress-bar bg-transparent" style=""></div></div>`);
+            const borderStyle = j === 0 ? "border-top-0 border-bottom-0 border-start-0" : j === 39 ? "border-top-0 border-bottom-0 border-end-0" : "border-top-0 border-bottom-0";
+            const progressHTML = `<div class="progress border ${borderStyle} rounded-0 bg-transparent" role="progressbar" aria-label="Segment one" aria-valuenow="1" aria-valuemin="0" aria-valuemax="40" style="height:2.5em; width: 2.5%; border-width: 0.75px!important;"><div class="progress-bar bg-transparent" style=""></div></div>`;
+            progress_scale.push(progressHTML);
+            $(`.progress-scale`).html(progress_scale.join('\n'));
+
+
+            //計算結果出力
+            for (let j = 0; j < 4; j++) {
+                const quest = calclated[i][1][j];
+                const count = calclated[i][0][j];
+                const remainingPoint = single[quest] - currentPoint[j] >= 0 ? single[quest] - currentPoint[j] : 0;
+                const remainingCount = Math.min(trialCount, limit[j]);
+
+                $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[quest]}.png" style="height:2.5em;">`);
+                $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${remainingPoint.toLocaleString()}</span>`);
+                $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${count}<span class="d-inline-block small mx-1">/ ${remainingCount}</span></span>`);
             };
+
+            $(`#${sougou_tokyu[i]}-count-margin`).html(calclated[i][1].reduce((acc, cur) => {
+                return acc + cur;
+            }, 0) > 0 ? `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
+                return acc + cur;
+            }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>` : `<span class="d-inline-block small mx-1 text-danger fw-bold">達成不可</span>`);
+
         };
-        $(`.progress-scale`).html(progress_scale.join('\n'));
-
-        //計算結果出力
-        $(`#${sougou_tokyu[i]}-questA-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[calclated[i][1][0]]}.png" style="height:2.50em;">`);
-        $(`#${sougou_tokyu[i]}-questA-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${(single[calclated[i][1][0]] - currentPoint[0] >= 0 ? single[calclated[i][1][0]] - currentPoint[0] : 0).toLocaleString()}</span>`);
-        $(`#${sougou_tokyu[i]}-questA-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0][0]}<span class="d-inline-block small mx-1">/ ${Math.min(trialCount,limit[0])}</span></span>`);
-
-        $(`#${sougou_tokyu[i]}-questB-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[calclated[i][1][1]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questB-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${(single[calclated[i][1][1]] - currentPoint[1] >= 0 ? single[calclated[i][1][1]] - currentPoint[1] : 0).toLocaleString()}</span>`);
-        $(`#${sougou_tokyu[i]}-questB-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0][1]}<span class="d-inline-block small mx-1">/ ${Math.min(trialCount,limit[1])}</span></span>`);
-
-        $(`#${sougou_tokyu[i]}-questC-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[calclated[i][1][2]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questC-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${(single[calclated[i][1][2]] - currentPoint[2] >= 0 ? single[calclated[i][1][2]] - currentPoint[2] : 0).toLocaleString()}</span>`);
-        $(`#${sougou_tokyu[i]}-questC-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0][2]}<span class="d-inline-block small mx-1">/ ${Math.min(trialCount,limit[2])}</span></span>`);
-
-        $(`#${sougou_tokyu[i]}-questD-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[calclated[i][1][3]]}.png" style="height:2.5em;">`);
-        $(`#${sougou_tokyu[i]}-questD-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${(single[calclated[i][1][3]] - currentPoint[3] >= 0 ? single[calclated[i][1][3]] - currentPoint[3] : 0).toLocaleString()}</span>`);
-        $(`#${sougou_tokyu[i]}-questD-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0][3]}<span class="d-inline-block small mx-1">/ ${Math.min(trialCount,limit[3])}</span></span>`);
-
-        $(`#${sougou_tokyu[i]}-count-margin`).html(calclated[i][1].reduce((acc, cur) => {
-            return acc + cur;
-        }, 0) > 0 ? `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
-            return acc + cur;
-        }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>` : `<span class="d-inline-block small mx-1 text-danger fw-bold">達成不可</span>`);
-
     };
 };
 
