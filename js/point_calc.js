@@ -53,15 +53,15 @@ function handleFormChange() {
         $(`#quest${point_array[i]['field']}-current-point`).html(`${Number(input_values['currentPoint'][i]).toLocaleString()}<span class="small"> Pt</span>`);
 
         //刻印ボーナス状況　平均解答時間
-        $(`#quest${point_array[i]['field']}-avg-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['avgTime'][i]]}.png" style="height:1.75em;">`);
+        $(`#quest${point_array[i]['field']}-avg-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['avgTime'][i]]}.png" style="height:1.25em;">`);
         //$(`#quest${point_array[i]['field']}-avg-rank-border`).html(`${(bonus_border['avg'][Math.floor(input_values['sealLevel'][i]/5)]).toFixed(1)}秒以内でSS`);
 
         //刻印ボーナス状況　クリアターン
-        $(`#quest${point_array[i]['field']}-turn-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['clearTurn'][i]]}.png" style="height:1.75em;">`);
+        $(`#quest${point_array[i]['field']}-turn-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['clearTurn'][i]]}.png" style="height:1.25em;">`);
         //$(`#quest${point_array[i]['field']}-turn-rank-border`).html(`${(bonus_border['turn'][Math.floor(input_values['sealLevel'][i]/5)])}ﾀｰﾝ以内でSS`);
 
         //刻印ボーナス状況　クイズ正解率
-        $(`#quest${point_array[i]['field']}-correct-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['correctRate'][i]]}.png" style="height:1.75em;">`);
+        $(`#quest${point_array[i]['field']}-correct-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['correctRate'][i]]}.png" style="height:1.25em;">`);
         //$(`#quest${point_array[i]['field']}-correct-rank-border`).html(`${(bonus_border['correct'][Math.floor(input_values['sealLevel'][i]/5)])}%以上でSS`);
     };
 
@@ -363,7 +363,7 @@ function point_calc(arr) {
                 const remainingPoint = single[quest] - currentPoint[j] >= 0 ? single[quest] - currentPoint[j] : 0;
                 const remainingCount = Math.min(trialCount, limit[j]);
 
-                $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[quest]}.png" style="height:2.5em;">`);
+                $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-rank`).html(`<img class="no-save" src="image/${tokyu_image[quest]}.png" style="height:2.0em;">`);
                 $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-point`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${remainingPoint.toLocaleString()}</span>`);
                 $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${count}<span class="d-inline-block small mx-1">/ ${remainingCount}</span></span>`);
             };
@@ -394,7 +394,7 @@ function escapeHtml(str) {
             '<': '&lt;',
             '>': '&gt;',
             '\\': '\\'
-        } [match];
+        }[match];
     });
 };
 
@@ -410,7 +410,7 @@ function escapeJs(str) {
             '\n': '\\n',
             '\r': '\\r',
             '\t': '\\t'
-        } [match];
+        }[match];
     });
 };
 
