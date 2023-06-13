@@ -28,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="5.6568542"
-     inkscape:cx="48.436815"
-     inkscape:cy="79.991455"
+     inkscape:cx="39.332815"
+     inkscape:cy="48.70198"
      inkscape:window-width="2256"
      inkscape:window-height="1425"
      inkscape:window-x="-9"
@@ -60,10 +60,10 @@
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Drop Shadow"
        id="filter68743"
-       x="-0.12074258"
-       y="-0.036571522"
-       width="1.1920005"
-       height="1.0985399">
+       x="-0.10945822"
+       y="-0.035537366"
+       width="1.1740565"
+       height="1.0957535">
       <feFlood
          flood-opacity="0.498039"
          flood-color="rgb(0,0,0)"
@@ -288,10 +288,10 @@
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Drop Shadow"
        id="filter74401"
-       x="-0.106473"
-       y="-0.26584683"
-       width="1.1693095"
-       height="1.7163095">
+       x="-0.10894912"
+       y="-0.42210795"
+       width="1.173247"
+       height="2.1373464">
       <feFlood
          flood-opacity="0.498039"
          flood-color="rgb(0,0,0)"
@@ -327,30 +327,28 @@
      id="layer1">
     <g
        id="g68217"
-       inkscape:label="9"
+       inkscape:label="10"
        style="display:none">
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text68265"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect68267);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect68267);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74886"><tspan
+           y="120.11099"
+           id="tspan1211"><tspan
              style="display:inline"
-             id="tspan74884">Ⅹ</tspan></tspan></text>
+             id="tspan1209">Ⅹ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text63155"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect63157);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect63157);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74890"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74888">Ⅹ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1213">Ⅹ</tspan></text>
     </g>
     <g
        id="g71273"
@@ -360,24 +358,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71267"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71275);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71275);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74894"><tspan
+           y="120.11099"
+           id="tspan1217"><tspan
              style="display:inline"
-             id="tspan74892">Ⅰ</tspan></tspan></text>
+             id="tspan1215">Ⅰ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71271"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71277);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71277);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74898"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74896">Ⅰ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1219">Ⅰ</tspan></text>
     </g>
     <g
        id="g71287"
@@ -387,24 +383,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71281"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71289);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71289);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74902"><tspan
+           y="120.11099"
+           id="tspan1223"><tspan
              style="display:inline"
-             id="tspan74900">Ⅱ</tspan></tspan></text>
+             id="tspan1221">Ⅱ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71285"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71291);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71291);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74906"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74904">Ⅱ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1225">Ⅱ</tspan></text>
     </g>
     <g
        id="g71301"
@@ -414,24 +408,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71295"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71303);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71303);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74910"><tspan
+           y="120.11099"
+           id="tspan1229"><tspan
              style="display:inline"
-             id="tspan74908">Ⅲ</tspan></tspan></text>
+             id="tspan1227">Ⅲ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71299"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71305);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71305);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74914"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74912">Ⅲ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1231">Ⅲ</tspan></text>
     </g>
     <g
        id="g71315"
@@ -441,24 +433,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71309"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71317);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71317);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74918"><tspan
+           y="120.11099"
+           id="tspan1235"><tspan
              style="display:inline"
-             id="tspan74916">Ⅳ</tspan></tspan></text>
+             id="tspan1233">Ⅳ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71313"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71319);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71319);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74922"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74920">Ⅳ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1237">Ⅳ</tspan></text>
     </g>
     <g
        id="g71329"
@@ -468,24 +458,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71323"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71331);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71331);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74926"><tspan
+           y="120.11099"
+           id="tspan1241"><tspan
              style="display:inline"
-             id="tspan74924">Ⅴ</tspan></tspan></text>
+             id="tspan1239">Ⅴ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71327"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71333);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71333);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74930"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74928">Ⅴ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1243">Ⅴ</tspan></text>
     </g>
     <g
        id="g71343"
@@ -495,24 +483,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71337"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71345);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71345);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74934"><tspan
+           y="120.11099"
+           id="tspan1247"><tspan
              style="display:inline"
-             id="tspan74932">Ⅵ</tspan></tspan></text>
+             id="tspan1245">Ⅵ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71341"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71347);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71347);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74938"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74936">Ⅵ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1249">Ⅵ</tspan></text>
     </g>
     <g
        id="g71357"
@@ -522,24 +508,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71351"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71359);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71359);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74942"><tspan
+           y="120.11099"
+           id="tspan1253"><tspan
              style="display:inline"
-             id="tspan74940">Ⅶ</tspan></tspan></text>
+             id="tspan1251">Ⅶ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71355"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71361);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71361);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74946"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74944">Ⅶ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1255">Ⅶ</tspan></text>
     </g>
     <g
        id="g71371"
@@ -549,24 +533,22 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71365"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71373);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71373);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74950"><tspan
+           y="120.11099"
+           id="tspan1259"><tspan
              style="display:inline"
-             id="tspan74948">Ⅷ</tspan></tspan></text>
+             id="tspan1257">Ⅷ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71369"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71375);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71375);opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74954"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74952">Ⅷ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1261">Ⅷ</tspan></text>
     </g>
     <g
        id="g71385"
@@ -576,51 +558,49 @@
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text71379"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect71387);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71387);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74958"><tspan
+           y="120.11099"
+           id="tspan1265"><tspan
              style="display:inline"
-             id="tspan74956">Ⅸ</tspan></tspan></text>
+             id="tspan1263">Ⅸ</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.2021163)"
          id="text71383"
-         style="font-weight:bold;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;white-space:pre;shape-inside:url(#rect71389);display:inline;opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect71389);display:inline;opacity:1;fill:#ff4029;fill-opacity:1;fill-rule:evenodd;stroke:#fef4d4;stroke-width:0;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter68743)"
          inkscape:label="text-shade"><tspan
            x="50.628426"
-           y="117.37662"
-           id="tspan74962"><tspan
-             style="font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold'"
-             id="tspan74960">Ⅸ</tspan></tspan></text>
+           y="120.11099"
+           id="tspan1267">Ⅸ</tspan></text>
     </g>
     <g
        id="g73985"
-       inkscape:label="9"
+       inkscape:label="0"
        style="display:inline">
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text73979"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect73987);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect73987);opacity:1;fill:#ff4029;fill-opacity:0.996078;fill-rule:evenodd;stroke:#fef4d4;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
          inkscape:label="text"><tspan
            x="83.961674"
-           y="117.37662"
-           id="tspan74966"><tspan
+           y="120.11099"
+           id="tspan1271"><tspan
              style="display:inline"
-             id="tspan74964">-</tspan></tspan></text>
+             id="tspan1269">-</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.2143125,0,0,0.2143125,-10.063545,0.20211639)"
          id="text74024"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:HGGothicE;-inkscape-font-specification:'HGGothicE Bold';text-align:center;white-space:pre;shape-inside:url(#rect74026);opacity:1;fill:#bb9966;fill-opacity:0.99607843;fill-rule:evenodd;stroke:none;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter74401)"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'BIZ UDMincho';-inkscape-font-specification:'BIZ UDMincho Bold';text-align:center;white-space:pre;shape-inside:url(#rect74026);opacity:1;fill:#bb9966;fill-opacity:0.996078;fill-rule:evenodd;stroke:none;stroke-width:7;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill;filter:url(#filter74401)"
          inkscape:label="text"><tspan
            x="83.961674"
-           y="117.37662"
-           id="tspan74970"><tspan
+           y="120.11099"
+           id="tspan1275"><tspan
              style="display:inline"
-             id="tspan74968">-</tspan></tspan></text>
+             id="tspan1273">-</tspan></tspan></text>
     </g>
   </g>
 </svg>

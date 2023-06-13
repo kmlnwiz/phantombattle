@@ -8,8 +8,8 @@
    version="1.1"
    id="svg204"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="rank03.svg"
-   inkscape:export-filename="grade_S.png"
+   sodipodi:docname="rank.svg"
+   inkscape:export-filename="rank00.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -28,17 +28,61 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="4"
-     inkscape:cx="62.75"
-     inkscape:cy="84.375"
-     inkscape:window-width="1655"
-     inkscape:window-height="1415"
-     inkscape:window-x="1"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="g46216" />
+     inkscape:zoom="5.6568542"
+     inkscape:cx="21.655145"
+     inkscape:cy="75.572037"
+     inkscape:window-width="2256"
+     inkscape:window-height="1425"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g7988" />
   <defs
      id="defs201">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient8052">
+      <stop
+         style="stop-color:#fffbba;stop-opacity:1;"
+         offset="0"
+         id="stop8048" />
+      <stop
+         style="stop-color:#e3a005;stop-opacity:1;"
+         offset="0.5"
+         id="stop8782" />
+      <stop
+         style="stop-color:#fffbba;stop-opacity:1;"
+         offset="1"
+         id="stop8050" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient7223">
+      <stop
+         style="stop-color:#33ccff;stop-opacity:1;"
+         offset="0"
+         id="stop7219" />
+      <stop
+         style="stop-color:#bbeeff;stop-opacity:1;"
+         offset="0.5"
+         id="stop7951" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop7221" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1751">
+      <stop
+         style="stop-color:#cccccc;stop-opacity:1;"
+         offset="0"
+         id="stop1747" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop1749" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient62334">
@@ -199,7 +243,7 @@
          offset="0.75"
          id="stop29207" />
       <stop
-         style="stop-color:#444444;stop-opacity:1;"
+         style="stop-color:#5a5a5a;stop-opacity:1;"
          offset="1"
          id="stop29209" />
     </linearGradient>
@@ -419,10 +463,10 @@
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
        id="filter57456"
-       x="-0.10484222"
-       y="-0.068178643"
-       width="1.2096844"
-       height="1.1363573">
+       x="-0.10789551"
+       y="-0.07016419"
+       width="1.215791"
+       height="1.1403284">
       <feGaussianBlur
          inkscape:collect="always"
          stdDeviation="1.4440067"
@@ -561,10 +605,10 @@
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
        id="filter57456-6"
-       x="-0.10484222"
-       y="-0.068178643"
-       width="1.2096844"
-       height="1.1363573">
+       x="-0.10789551"
+       y="-0.07016419"
+       width="1.215791"
+       height="1.1403284">
       <feGaussianBlur
          inkscape:collect="always"
          stdDeviation="1.4440067"
@@ -618,6 +662,69 @@
        width="191.70869"
        height="168.69106"
        id="rect62644" />
+    <rect
+       x="25.329931"
+       y="45.825108"
+       width="191.70869"
+       height="168.69106"
+       id="rect286" />
+    <rect
+       x="25.329932"
+       y="45.825106"
+       width="191.7087"
+       height="168.69105"
+       id="rect288" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1751"
+       id="linearGradient1753"
+       x1="71.991402"
+       y1="160.95274"
+       x2="72.241402"
+       y2="70.241928"
+       gradientUnits="userSpaceOnUse" />
+    <rect
+       x="25.329931"
+       y="45.825108"
+       width="191.70869"
+       height="168.69106"
+       id="rect6379" />
+    <rect
+       x="25.329932"
+       y="45.825106"
+       width="191.7087"
+       height="168.69105"
+       id="rect6381" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7223"
+       id="linearGradient6383"
+       gradientUnits="userSpaceOnUse"
+       x1="71.991402"
+       y1="160.95274"
+       x2="72.241402"
+       y2="70.241928" />
+    <rect
+       x="25.329931"
+       y="45.825108"
+       width="191.70869"
+       height="168.69106"
+       id="rect7990" />
+    <rect
+       x="25.329932"
+       y="45.825106"
+       width="191.7087"
+       height="168.69105"
+       id="rect7992" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8052"
+       id="linearGradient8054"
+       x1="30.936831"
+       y1="125.31637"
+       x2="85.611183"
+       y2="125.31637"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:label="C"
@@ -626,30 +733,114 @@
      style="display:none">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-17.752232,-17.805072)"
+       transform="matrix(0.26458333,0,0,0.26458333,-17.312983,-17.447916)"
        id="text208-9"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';white-space:pre;shape-inside:url(#rect210-4);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter20959)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect210-4);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter20959)"
        x="5.2447834"
        y="0"
        inkscape:label="text-clip"><tspan
-         x="76.03397"
-         y="165.16575"
-         id="tspan62807"><tspan
-           style="font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;text-anchor:middle"
-           id="tspan62805">C</tspan></tspan></text>
+         x="70.532682"
+         y="166.42002"
+         id="tspan9746"><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan9744">C</tspan></tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-17.752232,-17.805072)"
+       transform="matrix(0.26458333,0,0,0.26458333,-17.312983,-17.447915)"
        id="text208"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';white-space:pre;shape-inside:url(#rect210);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient8373);fill-opacity:1;fill-rule:evenodd;stroke:#28220b;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect210);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient8373);fill-opacity:1;fill-rule:evenodd;stroke:#28220b;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text"><tspan
-         x="76.03397"
-         y="165.16575"
-         id="tspan62811"><tspan
-           style="font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;text-anchor:middle"
-           id="tspan62809">C</tspan></tspan></text>
+         x="70.532682"
+         y="166.42002"
+         id="tspan9750"><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan9748">C</tspan></tspan></text>
+  </g>
+  <g
+     inkscape:label="-"
+     inkscape:groupmode="layer"
+     id="g7988"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.27159796,0,0,0.12818674,-1.2750181,-1.5118134)"
+       id="text7980"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;shape-inside:url(#rect7990);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter20959)"
+       x="5.2447834"
+       y="0"
+       inkscape:label="text-clip"><tspan
+         x="26.275391"
+         y="168.41522"
+         id="tspan9752">-</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.33186532,0,0,0.12504927,-4.7870386,-1.1186369)"
+       id="text7986"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;shape-inside:url(#rect7992);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient8054);fill-opacity:1;fill-rule:evenodd;stroke:#28220b;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       x="5.2447834"
+       y="0"
+       inkscape:label="text"><tspan
+         x="26.275391"
+         y="168.41522"
+         id="tspan9754">-</tspan></text>
+  </g>
+  <g
+     inkscape:label="D"
+     inkscape:groupmode="layer"
+     id="g284"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.25886564,0,0,0.26498252,-5.9513551,-17.504822)"
+       id="text276"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect286);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter20959)"
+       x="5.2447834"
+       y="0"
+       inkscape:label="text-clip"><tspan
+         x="26.275391"
+         y="166.42002"
+         id="tspan9756">D</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.25886564,0,0,0.26498252,-5.9513549,-17.504821)"
+       id="text282"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect288);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient1753);fill-opacity:1;fill-rule:evenodd;stroke:#212121;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       x="5.2447834"
+       y="0"
+       inkscape:label="text"><tspan
+         x="26.275391"
+         y="166.42002"
+         id="tspan9758">D</tspan></text>
+  </g>
+  <g
+     inkscape:label="E"
+     inkscape:groupmode="layer"
+     id="g6377"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-3.9582129,-17.447916)"
+       id="text6371"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect6379);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter20959)"
+       x="5.2447834"
+       y="0"
+       inkscape:label="text-clip"><tspan
+         x="26.275391"
+         y="166.42002"
+         id="tspan9760">E</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-3.9582127,-17.447915)"
+       id="text6375"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect6381);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient6383);fill-opacity:1;fill-rule:evenodd;stroke:#212121;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       x="5.2447834"
+       y="0"
+       inkscape:label="text"><tspan
+         x="26.275391"
+         y="166.42002"
+         id="tspan9762">E</tspan></text>
   </g>
   <g
      inkscape:label="B"
@@ -658,30 +849,30 @@
      style="display:none">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-17.269919,-17.882587)"
+       transform="matrix(0.26458333,0,0,0.26458333,-16.822058,-17.447916)"
        id="text28261"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';white-space:pre;shape-inside:url(#rect28267);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter28469)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect28267);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter28469)"
        x="5.2447834"
        y="0"
        inkscape:label="text-clip"><tspan
-         x="76.03397"
-         y="165.16575"
-         id="tspan62815"><tspan
-           style="font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;text-anchor:middle"
-           id="tspan62813">B</tspan></tspan></text>
+         x="77.466258"
+         y="166.42002"
+         id="tspan9766"><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan9764">B</tspan></tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-17.269919,-17.882587)"
+       transform="matrix(0.26458333,0,0,0.26458333,-16.822058,-17.447915)"
        id="text28261-1"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';white-space:pre;shape-inside:url(#rect28267-5);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient28462);fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect28267-5);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient28462);fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text"><tspan
-         x="76.03397"
-         y="165.16575"
-         id="tspan62819"><tspan
-           style="font-family:Garamond;-inkscape-font-specification:'Garamond Bold';text-align:center;text-anchor:middle"
-           id="tspan62817">B</tspan></tspan></text>
+         x="77.466258"
+         y="166.42002"
+         id="tspan9770"><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan9768">B</tspan></tspan></text>
   </g>
   <g
      inkscape:label="A"
@@ -690,65 +881,65 @@
      style="display:none">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-4.1046289,-15.904559)"
+       transform="matrix(0.25334357,0,0,0.26541895,-5.2913144,-17.289782)"
        id="text40135-8"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect40141-6);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter41065)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect40141-6);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter41065)"
        x="5.2447834"
        y="0"
        inkscape:label="text-clip"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62821">A</tspan></text>
+         y="166.42002"
+         id="tspan9772">A</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-4.1046289,-15.904559)"
+       transform="matrix(0.25334357,0,0,0.26541895,-5.291315,-17.289783)"
        id="text40135"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect40141);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient40245);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect40141);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient40245);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62823">A</tspan></text>
+         y="166.42002"
+         id="tspan9774">A</tspan></text>
   </g>
   <g
      inkscape:label="S"
      inkscape:groupmode="layer"
      id="g46216"
-     style="display:inline">
+     style="display:none">
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-1.6844555,-16.03375)"
+       transform="matrix(0.26458333,0,0,0.26458333,-2.4337616,-17.447916)"
        id="text46214"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect46220);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter57456)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect46220);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter57456)"
        x="5.2447834"
        y="0"
        inkscape:label="text-clip"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62825">S</tspan></text>
+         y="166.42002"
+         id="tspan9776">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-1.6844555,-16.03375)"
+       transform="matrix(0.26458333,0,0,0.26458333,-2.4337618,-17.447915)"
        id="text46214-6"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect46220-2);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient57450);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:4.6;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect46220-2);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient57450);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:4.6;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62827">S</tspan></text>
+         y="166.42002"
+         id="tspan9778">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-1.6844555,-16.03375)"
+       transform="matrix(0.26458333,0,0,0.26458333,-2.4337618,-17.447915)"
        id="text46214-6-2"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect46220-2-6);shape-padding:0.945935;display:inline;opacity:0.5;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient60095);stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect46220-2-6);shape-padding:0.945935;display:inline;opacity:0.5;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient60095);stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text-cover"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62829">S</tspan></text>
+         y="166.42002"
+         id="tspan9780">S</tspan></text>
   </g>
   <g
      inkscape:label="SS"
@@ -757,69 +948,69 @@
      style="display:none">
     <text
        xml:space="preserve"
-       transform="matrix(0.2294786,0,0,0.26670209,6.8197981,-16.278678)"
+       transform="matrix(0.2106944,0,0,0.26819165,7.4784691,-17.884325)"
        id="text62338-9"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect62350-4);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter57456-6)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect62350-4);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter57456-6)"
        x="5.2447834"
        y="0"
        inkscape:label="text-clip"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62831">S</tspan></text>
+         y="166.42002"
+         id="tspan9782">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.2294786,0,0,0.26670209,6.8197976,-16.278678)"
+       transform="matrix(0.2106944,0,0,0.26819165,7.4784686,-17.884325)"
        id="text62342-8"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect62352-4);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient62547);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect62352-4);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient62547);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62833">S</tspan></text>
+         y="166.42002"
+         id="tspan9784">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.2294786,0,0,0.26670209,6.8197976,-16.278678)"
+       transform="matrix(0.2106944,0,0,0.26819165,7.4784686,-17.884325)"
        id="text62346-2"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect62354-1);shape-padding:0.945935;display:inline;opacity:0.5;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient62356-0);stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect62354-1);shape-padding:0.945935;display:inline;opacity:0.5;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient62356-0);stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text-cover"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62835">S</tspan></text>
+         y="166.42002"
+         id="tspan9786">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.2294786,0,0,0.26670209,-5.8802024,-16.278678)"
+       transform="matrix(0.2106944,0,0,0.26819165,-5.7145391,-17.884325)"
        id="text62338"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect62350);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter57456)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect62350);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter57456)"
        x="5.2447834"
        y="0"
        inkscape:label="text-clip"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62837">S</tspan></text>
+         y="166.42002"
+         id="tspan9788">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.2294786,0,0,0.26670209,-5.8802029,-16.278678)"
+       transform="matrix(0.2106944,0,0,0.26819165,-5.7145396,-17.884325)"
        id="text62342"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect62352);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient62356);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect62352);shape-padding:0.945935;display:inline;mix-blend-mode:normal;fill:url(#linearGradient62356);fill-opacity:1;fill-rule:evenodd;stroke:#440000;stroke-width:5.34747;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62839">S</tspan></text>
+         y="166.42002"
+         id="tspan9790">S</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.2294786,0,0,0.26670209,-5.8802029,-16.278678)"
+       transform="matrix(0.2106944,0,0,0.26819165,-5.7145396,-17.884325)"
        id="text62346"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:Garamond;-inkscape-font-specification:'Garamond Bold';white-space:pre;shape-inside:url(#rect62354);shape-padding:0.945935;display:inline;opacity:0.5;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient62358);stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT Bold';white-space:pre;shape-inside:url(#rect62354);shape-padding:0.945935;display:inline;opacity:0.5;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient62358);stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        x="5.2447834"
        y="0"
        inkscape:label="text-cover"><tspan
          x="26.275391"
-         y="158.50354"
-         id="tspan62841">S</tspan></text>
+         y="166.42002"
+         id="tspan9792">S</tspan></text>
   </g>
 </svg>
