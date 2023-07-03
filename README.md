@@ -1,4 +1,5 @@
 # 幻闘戦　ポイント計算
+https://kmlnwiz.github.io/phantombattle/
 
 # DEMO
 
