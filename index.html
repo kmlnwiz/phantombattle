@@ -82,6 +82,11 @@
                         </div>
                     </div>-->
                 </div>
+                <div class="row justify-content-end py-1 px-3">
+                    <button type="button" class="col-3 btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal" >
+                        リセット
+                    </button>
+                </div>
             </div>
 
             <hr class="d-lg-none my-3">
@@ -1077,6 +1082,24 @@
     </div>
 
 
+    <!-- deleteModal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="deleteModalLabel">データのリセット</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>保存されたデータをリセットします。よろしいですか？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" onclick="reset()">リセット</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -1088,6 +1111,7 @@
     <script src="js/data.js"></script>
     <script src="js/point_calc.js"></script>
     <script src="js/table.js"></script>
+    <script src="js/save.js"></script>
 
     <script>
         var listItems = "";
@@ -1245,6 +1269,10 @@
                     })
             })
         })()
+    </script>
+    <script>
+        const data = load();
+        setAction();
     </script>
     <style>
         body {

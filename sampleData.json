@@ -1,0 +1,56 @@
+{
+    "settings": {
+        "trialCountRadio1": {
+            "startDate": "2024-12-23",
+            "endDate": "2024-01-12",
+            "includeStartDate": true
+        },
+        "trialCountRadio2": {
+            "remainAttempts": 100
+        },
+        "selected": "trialCountRadio1",
+        "isCasual": true
+    },
+    "quests": {
+        "questA": {
+            "name": "クエストA",
+            "level": 30,
+            "currentPoint": 3000000,
+            "levelBonus": {
+                "averageTime": 4,
+                "clearTurn": 4,
+                "correctRate": 4
+            }
+        },
+        "questB": {
+            "name": "クエストB",
+            "level": 30,
+            "currentPoint": 3000000,
+            "levelBonus": {
+                "averageTime": 4,
+                "clearTurn": 4,
+                "correctRate": 4
+            }
+        },
+        "questC": {
+            "name": "クエストC",
+            "level": 30,
+            "currentPoint": 3000000,
+            "levelBonus": {
+                "averageTime": 4,
+                "clearTurn": 4,
+                "correctRate": 4
+            }
+        },
+        "questD": {
+            "name": "クエストD",
+            "level": 30,
+            "currentPoint": 3000000,
+            "levelBonus": {
+                "averageTime": 4,
+                "clearTurn": 4,
+                "correctRate": 4
+            }
+        }
+    }
+}
