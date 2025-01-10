@@ -82,11 +82,6 @@
                         </div>
                     </div>-->
                 </div>
-                <div class="row justify-content-end py-1 px-3">
-                    <button type="button" class="col-3 btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal" >
-                        リセット
-                    </button>
-                </div>
             </div>
 
             <hr class="d-lg-none my-3">
@@ -1035,9 +1030,18 @@
 
         <!-- Button trigger modal -->
         <div class="position-sticky bottom-0 bg-body py-3 border-top" style="z-index:2;">
-            <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="createImg()">
-                画像化する
-            </button>
+            <div class="row">
+                <div class="col-8">
+                    <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick="createImg()">
+                        画像化する
+                    </button>
+                    </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-danger btn-lg w-100" data-bs-toggle="modal" data-bs-target="#deleteModal" >
+                            リセット
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div class="row row-cols-1 g-0">
@@ -1093,8 +1097,8 @@
                 <div class="modal-body">
                     <p>保存されたデータをリセットします。よろしいですか？</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" onclick="reset()">リセット</button>
+                <div class="modal-footer p-2">
+                    <button type="button" class="btn btn-danger" onclick="reset()">リセットする</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
                 </div>
             </div>
