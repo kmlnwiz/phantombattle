@@ -303,14 +303,15 @@ function point_calc(arr) {
         }
         // bestResultに最適な組み合わせが保存される
         //console.log(`個別等級${totalPoint}`, bestResult);
-        calclated.push([bestResult['arr'], bestResult['indexes']]);
+        calclated.push([bestResult['arr'], bestResult['indexes'], bestResult['arr'].reduce((acc, cur) => acc + cur, 0) > 0 ? true : false]);
     };
 
     //総合等級を達成不可の場合は無効
     for (let i = 0; i < calclated.length; i++) {
         calclated[i].length == 0 ? calclated[i] = [
             [0, 0, 0, 0],
-            [0, 0, 0, 0]
+            [0, 0, 0, 0],
+            false
         ] : "";
     };
 
@@ -318,19 +319,26 @@ function point_calc(arr) {
     if ($('#on_casual').prop('checked')) {
         calclated[0] = [
             [0, 0, 0, 0],
-            [0, 0, 0, 0]
+            [0, 0, 0, 0],
+            false
         ];
         calclated[1] = [
             [0, 0, 0, 0],
-            [0, 0, 0, 0]
+            [0, 0, 0, 0],
+            false
         ];
     };
 
     console.log("結果:", calclated);
 
 
-    //プログレスバー
+    //出力
     for (let i = 0; i < calclated.length; i++) {
+        if (!calclated[i][2]) {
+            $(`#result${sougou_tokyu[i]}`).addClass('bg-body-secondary');
+        } else {
+            $(`#result${sougou_tokyu[i]}`).removeClass('bg-body-secondary');
+        };
 
         let progress = [];
         for (let j = 0; j < 4; j++) {
@@ -368,9 +376,7 @@ function point_calc(arr) {
                 $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${count}<span class="d-inline-block small mx-1">/ ${remainingCount}</span></span>`);
             };
 
-            $(`#${sougou_tokyu[i]}-count-margin`).html(calclated[i][1].reduce((acc, cur) => {
-                return acc + cur;
-            }, 0) > 0 ? `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
+            $(`#${sougou_tokyu[i]}-count-margin`).html(calclated[i][2] ? `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
                 return acc + cur;
             }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>` : `<span class="d-inline-block small mx-1 text-danger fw-bold">達成不可</span>`);
 
