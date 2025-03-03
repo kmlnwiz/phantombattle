@@ -1,7 +1,13 @@
 // idが"quest"から始まる要素内のフォームが変更されたときに呼び出される関数を定義する
 function handleFormChange() {
-    // フォームの値を取得する
-    const input_values = {
+    const input_values = getInputValues();
+    const point_array = calculatePoints(input_values);
+    updateUI(input_values, point_array);
+    point_calc(point_array);
+}
+
+function getInputValues() {
+    return {
         field: ['A', 'B', 'C', 'D'],
         fieldName: ['questA', 'questB', 'questC', 'questD'],
         questName: $('input[id^="quest-name"]').map(function () {
@@ -23,7 +29,9 @@ function handleFormChange() {
             return escapeJs(escapeHtml($(this).val()));
         }).get()
     };
+}
 
+function calculatePoints(input_values) {
     const point_array = [];
     for (let i = 0; i < 4; i++) {
         point_array.push({
@@ -38,43 +46,25 @@ function handleFormChange() {
         });
         point_array[i]['getPoint'] = point_array[i]['sealLevelPoint'] + point_array[i]['avgTimePoint'] + point_array[i]['clearTurnPoint'] + point_array[i]['correctRatePoint'];
         $('#on_casual').prop('checked') ? point_array[i]['getPoint'] = point_array[i]['getPoint'] * 3 : '';
-    };
-    //console.log(input_values, point_array);
+    }
+    return point_array;
+}
 
-
+function updateUI(input_values, point_array) {
     for (let i = 0; i < point_array.length; i++) {
         $(`.quest${point_array[i]['field']}-name`).html(`${input_values['questName'][i] ? input_values['questName'][i] : `クエスト${point_array[i]['field']}`}`);
-
         $(`#get-point${point_array[i]['field']}`).html(`${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
-
-        //クエストの基本情報
         $(`#quest${point_array[i]['field']}-get-point`).html(`${point_array[i]['getPoint'].toLocaleString()}<span class="small"> Pt</span>`);
         $(`#quest${point_array[i]['field']}-seal-level`).html(`<span class="small">Lv. </span>${input_values['sealLevel'][i]}`);
         $(`#quest${point_array[i]['field']}-current-point`).html(`${Number(input_values['currentPoint'][i]).toLocaleString()}<span class="small"> Pt</span>`);
-
-        //刻印ボーナス状況　平均解答時間
         $(`#quest${point_array[i]['field']}-avg-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['avgTime'][i]]}.png" style="height:1.25em;">`);
-        //$(`#quest${point_array[i]['field']}-avg-rank-border`).html(`${(bonus_border['avg'][Math.floor(input_values['sealLevel'][i]/5)]).toFixed(1)}秒以内でSS`);
-
-        //刻印ボーナス状況　クリアターン
         $(`#quest${point_array[i]['field']}-turn-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['clearTurn'][i]]}.png" style="height:1.25em;">`);
-        //$(`#quest${point_array[i]['field']}-turn-rank-border`).html(`${(bonus_border['turn'][Math.floor(input_values['sealLevel'][i]/5)])}ﾀｰﾝ以内でSS`);
-
-        //刻印ボーナス状況　クイズ正解率
         $(`#quest${point_array[i]['field']}-correct-rank`).html(`<img class="no-save mb-0" src="image/${grade_image[input_values['correctRate'][i]]}.png" style="height:1.25em;">`);
-        //$(`#quest${point_array[i]['field']}-correct-rank-border`).html(`${(bonus_border['correct'][Math.floor(input_values['sealLevel'][i]/5)])}%以上でSS`);
-    };
-
-    //出力日
+    }
     const date = new Date();
     $('#generate-date').html(`generated ${date.getFullYear()}/${('00' + (date.getMonth() + 1)).slice(-2)}/${('00' + (date.getDate())).slice(-2)}`);
-
-
     $('#which-mode').html($('#on_casual').prop('checked') ? '<span class="col d-inline-block text-bg-success text-center fw-bold py-1">カジュアルモード</span>' : '<span class="col d-inline-block text-bg-danger text-center fw-bold py-1">チャレンジモード</span>');
-    point_calc(point_array);
-};
-
-handleFormChange();
+}
 
 // idが"quest"から始まる要素内のフォームの変更を監視する
 $('[id^="quest"] select').on('change', handleFormChange);
@@ -192,7 +182,7 @@ function point_calc(arr) {
 
         return date * 5;
     };
-    const trialRadio1 = dateCount($('#trial-count-date1').val(), $('#trial-count-date2').val());
+    const trialRadio1 = dateCount($('#trial-count-start-date').val(), $('#trial-count-end-date').val());
     const trialRadio2 = Number(escapeJs(escapeHtml($('#trial-count').val())));
     $('#trial-count-fromdate').html(`${trialRadio1}<span class="small"> / 100</span>`);
     //console.log(trialRadio1, trialRadio2);
@@ -221,19 +211,19 @@ function point_calc(arr) {
     ];
     //console.log(currentPoint);
 
-    const SG = []; //single count
+    const SingleCount = []; //single count
     for (let i = 0; i < point.length; i++) {
-        SG.push(single.map(element => {
+        SingleCount.push(single.map(element => {
             return Math.ceil((element - currentPoint[i] >= 0 ? element - currentPoint[i] : 0) / point[i]);
         }));
     };
-    //console.log(SG);
+    //console.log(SingleCount);
 
 
-    const A = SG[0];
-    const B = SG[1];
-    const C = SG[2];
-    const D = SG[3];
+    const A = SingleCount[0];
+    const B = SingleCount[1];
+    const C = SingleCount[2];
+    const D = SingleCount[3];
 
     for (let i = 0; i < 5; i++) {
         let minCost = Infinity;
@@ -262,7 +252,7 @@ function point_calc(arr) {
                         const POINT = a + b + c + d;
 
                         if (POINT >= totalPoint) {
-                            const arr = [SG[0][a], SG[1][b], SG[2][c], SG[3][d]];
+                            const arr = [SingleCount[0][a], SingleCount[1][b], SingleCount[2][c], SingleCount[3][d]];
                             const DAYS = arr.reduce((acc, cur) => {
                                 return acc + Math.ceil(cur / 5);
                             }, 0);
@@ -303,7 +293,19 @@ function point_calc(arr) {
         }
         // bestResultに最適な組み合わせが保存される
         //console.log(`個別等級${totalPoint}`, bestResult);
-        calclated.push([bestResult['arr'], bestResult['indexes'], bestResult['arr'].reduce((acc, cur) => acc + cur, 0) > 0 ? true : false]);
+
+        calclated.push([bestResult['arr'], bestResult['indexes']]);
+
+        //達成できるか
+        calclated[i].push(calclated[i][0].reduce((acc, cur) => {
+            return acc + cur;
+        }, 0) > 0 ? true : false);
+
+        //既に達成しているか
+        calclated[i].push(calclated[i][1].reduce((acc, cur) => {
+            return acc + cur;
+        }, 0) == totalPoint ? true : false);
+        console.log(calclated[i][1], totalPoint);
     };
 
     //総合等級を達成不可の場合は無効
@@ -311,6 +313,7 @@ function point_calc(arr) {
         calclated[i].length == 0 ? calclated[i] = [
             [0, 0, 0, 0],
             [0, 0, 0, 0],
+            false,
             false
         ] : "";
     };
@@ -320,11 +323,13 @@ function point_calc(arr) {
         calclated[0] = [
             [0, 0, 0, 0],
             [0, 0, 0, 0],
+            false,
             false
         ];
         calclated[1] = [
             [0, 0, 0, 0],
             [0, 0, 0, 0],
+            false,
             false
         ];
     };
@@ -334,10 +339,13 @@ function point_calc(arr) {
 
     //出力
     for (let i = 0; i < calclated.length; i++) {
-        if (!calclated[i][2]) {
+        if (!calclated[i][2] && !calclated[i][3]) {
             $(`#result${sougou_tokyu[i]}`).addClass('bg-body-secondary');
+        } else if (!calclated[i][2] && calclated[i][3]) {
+            $(`#result${sougou_tokyu[i]}`).addClass('bg-body-tertiary');
         } else {
             $(`#result${sougou_tokyu[i]}`).removeClass('bg-body-secondary');
+            $(`#result${sougou_tokyu[i]}`).removeClass('bg-body-tertiary');
         };
 
         let progress = [];
@@ -376,9 +384,24 @@ function point_calc(arr) {
                 $(`#${sougou_tokyu[i]}-quest${String.fromCharCode(65 + j)}-single-count`).html(`<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${count}<span class="d-inline-block small mx-1">/ ${remainingCount}</span></span>`);
             };
 
-            $(`#${sougou_tokyu[i]}-count-margin`).html(calclated[i][2] ? `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
-                return acc + cur;
-            }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>` : `<span class="d-inline-block small mx-1 text-danger fw-bold">達成不可</span>`);
+            let marginHTML = "";
+            switch (true) {
+                case calclated[i][2] && calclated[i][3]:
+                    marginHTML += `<span class="small" style="font-size:0.7em;">あと</span><span class="d-inline-block text-center" style="width:5.25em;">${calclated[i][0].reduce((acc, cur) => {
+                        return acc + cur;
+                    }, 0)}<span class="d-inline-block small mx-1">/ ${trialCount}</span></span>`;
+                    break;
+
+                case !calclated[i][2] && calclated[i][3]:
+                    marginHTML += `<span class="d-inline-block small mx-1 text-primary fw-bold">達成済</span>`;
+                    break;
+
+                case !calclated[i][2] && !calclated[i][3]:
+                    marginHTML += `<span class="d-inline-block small mx-1 text-danger fw-bold">達成不可</span>`;
+                default:
+                    break;
+            };
+            $(`#${sougou_tokyu[i]}-count-margin`).html(marginHTML);
 
         };
     };

@@ -97,12 +97,12 @@
                     </div>
                     <div class="row mb-3" id="trialCountRadioInput1">
                         <div class="col-6 mb-2">
-                            <label class="" for="trial-count-date1">起点日</label>
-                            <input id="trial-count-date1" type="date" class="form-control" placeholder="起点日" disabled>
+                            <label class="" for="trial-count-start-date">起点日</label>
+                            <input id="trial-count-start-date" type="date" class="form-control" placeholder="起点日" disabled>
                         </div>
                         <div class="col-6 mb-2">
-                            <label class="" for="trial-count-date2">終了日</label>
-                            <input id="trial-count-date2" type="date" class="form-control" placeholder="終了日" disabled>
+                            <label class="" for="trial-count-end-date">終了日</label>
+                            <input id="trial-count-end-date" type="date" class="form-control" placeholder="終了日" disabled>
                         </div>
                         <div class="col-12 mb-2">
                             <input class="form-check-input" type="checkbox" value="" id="on_today" checked disabled>
@@ -1144,8 +1144,8 @@
         const thursdayNextWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() + (4 - today.getDay() + 14) % 7);
         const thursday = (thursdayThisWeek.getTime() > today.getTime()) ? thursdayThisWeek : thursdayNextWeek;
         const formattedDate2 = thursday.getFullYear() + '-' + ('0' + (thursday.getMonth() + 1)).slice(-2) + '-' + ('0' + thursday.getDate()).slice(-2);
-        $("#trial-count-date1").val(formattedDate1);
-        $("#trial-count-date2").val(formattedDate2);
+        $("#trial-count-start-date").val(formattedDate1);
+        $("#trial-count-end-date").val(formattedDate2);
 
         const diff_initial = Math.ceil((thursday - today) / (1000 * 60 * 60 * 24));
         $('#trial-count-fromdate').html(`${diff_initial * 5}<span class="small"> / 100</span>`);

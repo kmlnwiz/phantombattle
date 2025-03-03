@@ -3,8 +3,8 @@ function getData() {
     const settings = {};
 
     const trialCountRadio1 = {};
-    trialCountRadio1['startDate'] = $('#trial-count-date1').val();
-    trialCountRadio1['endDate'] = $('#trial-count-date2').val();
+    trialCountRadio1['startDate'] = $('#trial-count-start-date').val();
+    trialCountRadio1['endDate'] = $('#trial-count-end-date').val();
     trialCountRadio1['includeStartDate'] = $('#on_today').prop('checked');
     settings['trialCountRadio1'] = trialCountRadio1;
 
@@ -48,8 +48,8 @@ function getData() {
 function setData(data) {
     const settings = data.settings;
     const trialCountRadio1 = settings.trialCountRadio1;
-    $('#trial-count-date1').val(trialCountRadio1.startDate);
-    $('#trial-count-date2').val(trialCountRadio1.endDate);
+    $('#trial-count-start-date').val(trialCountRadio1.startDate);
+    $('#trial-count-end-date').val(trialCountRadio1.endDate);
     $('#on_today').prop('checked', trialCountRadio1.includeStartDate);
     const trialCountRadio2 = settings.trialCountRadio2;
     $('#trial-count').val(trialCountRadio2.remainAttempts);
@@ -75,7 +75,7 @@ function setData(data) {
 function save() {
     const data = getData();
     console.log('save!', data);
-    
+
     localStorage.setItem('data', JSON.stringify(data));
 }
 
@@ -84,6 +84,8 @@ function load() {
     if (data) {
         setData(JSON.parse(data));
     }
+    handleFormChange();
+
     return data;
 }
 
